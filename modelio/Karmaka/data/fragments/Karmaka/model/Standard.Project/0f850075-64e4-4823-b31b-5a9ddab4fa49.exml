@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Karmaka" version="4">
+  <OBJECT>
+    <ID name="Karmaka" mc="Standard.Project" uid="0f850075-64e4-4823-b31b-5a9ddab4fa49"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[Karmaka]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="karmaka" mc="Standard.Package" uid="d1c1baa9-5970-4098-9ca5-7f5bb57f5e2d"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="Karmaka" mc="Infrastructure.DiagramSet" uid="06137fc9-7d3d-4b9a-950a-7b049342855b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="karmaka" version="4">
+  <OBJECT>
+    <ID name="karmaka" mc="Standard.Package" uid="d1c1baa9-5970-4098-9ca5-7f5bb57f5e2d"/>
+    <PID name="Karmaka" mc="Standard.Project" uid="0f850075-64e4-4823-b31b-5a9ddab4fa49"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[karmaka]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Carte" mc="Standard.Class" uid="b193e8d4-81d4-47b8-bd3b-575819b816e8"/>
+        <COMPID name="Rouge" mc="Standard.Class" uid="90e64502-9c61-40f1-aae0-4e793de9542d"/>
+        <COMPID name="Verte" mc="Standard.Class" uid="4973a8f1-f3df-4b30-9afa-660aa42f70aa"/>
+        <COMPID name="Bleue" mc="Standard.Class" uid="33496e57-df43-4dee-8fee-e6df5bfaced9"/>
+        <COMPID name="Mosaique" mc="Standard.Class" uid="43a6c57a-b94c-4466-b1ef-8fd4c3d32366"/>
+        <COMPID name="Transmigration" mc="Standard.Class" uid="23aa312d-d4da-4aa5-8f0f-592a04ce0d66"/>
+        <COMPID name="Destiné" mc="Standard.Class" uid="5adbf63e-c8e7-47d7-a8d9-b433f08b81d8"/>
+        <COMPID name="CoupDOeil" mc="Standard.Class" uid="ce3c1fc9-e705-4ba5-ac6e-e77d4ceca58c"/>
+        <COMPID name="Duperie" mc="Standard.Class" uid="4c92fd6e-9f9d-4b3b-bd62-d2e6bbddc944"/>
+        <COMPID name="RevesBrise" mc="Standard.Class" uid="e84f31ea-e011-43b6-b59d-7523f778df52"/>
+        <COMPID name="Deni" mc="Standard.Class" uid="7cf58c66-b9f9-4bb0-b30d-2446cc6a5c2a"/>
+        <COMPID name="Vol" mc="Standard.Class" uid="82cc738e-fff7-4246-bc40-5199653a9fb2"/>
+        <COMPID name="Lendemain" mc="Standard.Class" uid="50cdd39d-f677-4da1-8d45-f535be0f48d3"/>
+        <COMPID name="Recyclage" mc="Standard.Class" uid="59df5a7f-e1c8-4a02-8929-5f97345005ab"/>
+        <COMPID name="Sauvetage" mc="Standard.Class" uid="0fa1ae7a-3e84-40b4-8ea7-b3525365ea2b"/>
+        <COMPID name="Longevite" mc="Standard.Class" uid="25701a0b-ead6-4e4f-9281-a299f3bf74c9"/>
+        <COMPID name="Semis" mc="Standard.Class" uid="1dc7e8f7-d684-45eb-8c01-906e450b3da0"/>
+        <COMPID name="Voyage" mc="Standard.Class" uid="9519c32d-6253-427c-9bc4-6080da4433fe"/>
+        <COMPID name="Panique" mc="Standard.Class" uid="5231ade3-8de0-48c9-b873-80a12681c1ae"/>
+        <COMPID name="Jubile" mc="Standard.Class" uid="720e85e2-8201-4fa5-8671-6c45f02f894e"/>
+        <COMPID name="DernierSoufle" mc="Standard.Class" uid="5a29d77b-9acc-4c2e-9daf-13eefdbcf7f1"/>
+        <COMPID name="Roulette" mc="Standard.Class" uid="ad656fdb-a7f1-4a2e-bd6e-08dd986d77f3"/>
+        <COMPID name="Crise" mc="Standard.Class" uid="b2e811ad-735c-479c-925b-cd9a398ab7e9"/>
+        <COMPID name="Fournaise" mc="Standard.Class" uid="23d07695-3b2c-4303-9c2d-97ef0ff562b4"/>
+        <COMPID name="Bassesse" mc="Standard.Class" uid="642fbc85-2e87-4d6a-8b4b-705d5f76bcb8"/>
+        <COMPID name="Vengeance" mc="Standard.Class" uid="4975da69-fc33-4e07-89eb-30c9ea458bd2"/>
+        <COMPID name="Panique" mc="Standard.Class" uid="ae23610d-0884-4cd9-80ce-000ba3ca750a"/>
+        <COMPID name="Incarnation" mc="Standard.Class" uid="c99238a4-80a4-4f69-9c25-06a6a0e40344"/>
+        <COMPID name="Mimetisme" mc="Standard.Class" uid="697abc3f-dab5-4422-9b2a-158033e74872"/>
+        <COMPID name="Joueur" mc="Standard.Class" uid="d6ce72c4-81aa-4d93-9abd-3099817addef"/>
+        <COMPID name="JoueurVirtuel" mc="Standard.Class" uid="1409589d-3190-421c-88bd-f7d180731309"/>
+        <COMPID name="Strategie" mc="Standard.Class" uid="64189e7c-7862-4e1b-8241-9f79f580a260"/>
+        <COMPID name="Aleatoire" mc="Standard.Class" uid="48d928d5-08d9-4d17-ace1-4885d3570915"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagramme de classe karmaka" mc="Standard.ClassDiagram" uid="7330627e-65c8-4667-a942-9258c6e0f67d"/>
+      </COMP>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="c34d4a41-5d8b-46d0-b6f9-91d1bb31e589"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<Saisir le texte de la note ici>]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
