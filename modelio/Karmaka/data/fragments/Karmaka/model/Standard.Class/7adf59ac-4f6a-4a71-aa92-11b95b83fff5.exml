@@ -1,23 +1,23 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Verte" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="VieFuture" version="4">
   <OBJECT>
-    <ID name="Verte" mc="Standard.Class" uid="4973a8f1-f3df-4b30-9afa-660aa42f70aa"/>
+    <ID name="VieFuture" mc="Standard.Class" uid="7adf59ac-4f6a-4a71-aa92-11b95b83fff5"/>
     <PID name="karmaka" mc="Standard.Package" uid="d1c1baa9-5970-4098-9ca5-7f5bb57f5e2d"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>
       <ATT name="IsElementary">false</ATT>
-      <ATT name="IsAbstract">true</ATT>
+      <ATT name="IsAbstract">false</ATT>
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Verte]]></ATT>
+      <ATT name="Name"><![CDATA[VieFuture]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="Parent">
         <OBJECT>
-          <ID name="Generalization" mc="Standard.Generalization" uid="f15dc077-ac60-4771-968d-dc855008b50a"/>
+          <ID name="Generalization" mc="Standard.Generalization" uid="61ac389f-6265-4723-80d8-814d2c596892"/>
           <ATTRIBUTES>
             <ATT name="Discriminator"></ATT>
             <ATT name="Name"><![CDATA[Generalization]]></ATT>
@@ -25,7 +25,7 @@
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="SuperType">
-              <ID name="Carte" mc="Standard.Class" uid="b193e8d4-81d4-47b8-bd3b-575819b816e8"/>
+              <ID name="PilesCartes" mc="Standard.Class" uid="622bde93-e84e-459e-a46d-9b1921c0a851"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

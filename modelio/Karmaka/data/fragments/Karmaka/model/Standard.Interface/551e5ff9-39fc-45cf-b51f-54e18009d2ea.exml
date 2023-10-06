@@ -1,23 +1,21 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="RevesBrise" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Pouvoir" version="4">
   <OBJECT>
-    <ID name="RevesBrise" mc="Standard.Class" uid="e84f31ea-e011-43b6-b59d-7523f778df52"/>
+    <ID name="Pouvoir" mc="Standard.Interface" uid="551e5ff9-39fc-45cf-b51f-54e18009d2ea"/>
     <PID name="karmaka" mc="Standard.Package" uid="d1c1baa9-5970-4098-9ca5-7f5bb57f5e2d"/>
     <ATTRIBUTES>
-      <ATT name="IsActive">false</ATT>
-      <ATT name="IsMain">false</ATT>
       <ATT name="IsElementary">false</ATT>
-      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsAbstract">true</ATT>
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[RevesBrise]]></ATT>
+      <ATT name="Name"><![CDATA[Pouvoir]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="pouvoir" mc="Standard.Operation" uid="cf005e8f-6467-406b-a7c0-102b1118d99c"/>
+          <ID name="pouvoir" mc="Standard.Operation" uid="b8bc9b3d-a07a-4a89-95ab-d9c618062ba9"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>

@@ -13,12 +13,11 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="6023490b-e68e-46f9-9978-509541517e72"/>
+      </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="Carte" mc="Standard.Class" uid="b193e8d4-81d4-47b8-bd3b-575819b816e8"/>
-        <COMPID name="Rouge" mc="Standard.Class" uid="90e64502-9c61-40f1-aae0-4e793de9542d"/>
-        <COMPID name="Verte" mc="Standard.Class" uid="4973a8f1-f3df-4b30-9afa-660aa42f70aa"/>
-        <COMPID name="Bleue" mc="Standard.Class" uid="33496e57-df43-4dee-8fee-e6df5bfaced9"/>
-        <COMPID name="Mosaique" mc="Standard.Class" uid="43a6c57a-b94c-4466-b1ef-8fd4c3d32366"/>
         <COMPID name="Transmigration" mc="Standard.Class" uid="23aa312d-d4da-4aa5-8f0f-592a04ce0d66"/>
         <COMPID name="Destiné" mc="Standard.Class" uid="5adbf63e-c8e7-47d7-a8d9-b433f08b81d8"/>
         <COMPID name="CoupDOeil" mc="Standard.Class" uid="ce3c1fc9-e705-4ba5-ac6e-e77d4ceca58c"/>
@@ -47,6 +46,126 @@
         <COMPID name="JoueurVirtuel" mc="Standard.Class" uid="1409589d-3190-421c-88bd-f7d180731309"/>
         <COMPID name="Strategie" mc="Standard.Class" uid="64189e7c-7862-4e1b-8241-9f79f580a260"/>
         <COMPID name="Aleatoire" mc="Standard.Class" uid="48d928d5-08d9-4d17-ace1-4885d3570915"/>
+        <COMPID name="Pouvoir" mc="Standard.Interface" uid="551e5ff9-39fc-45cf-b51f-54e18009d2ea"/>
+        <OBJECT>
+          <ID name="Couleur" mc="Standard.Enumeration" uid="e2c8699a-8914-4141-aac2-781ce297835c"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Couleur]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="VERT" mc="Standard.EnumerationLiteral" uid="fc280842-33fc-4963-a88f-aa7e757438d1"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[VERT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="BLEU" mc="Standard.EnumerationLiteral" uid="2a641f5b-fc92-4956-92fb-4ed9f8ab488a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BLEU]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ROUGE" mc="Standard.EnumerationLiteral" uid="30c75f32-eb85-461b-b4a7-340e53724670"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ROUGE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="MOSAIQUE" mc="Standard.EnumerationLiteral" uid="97e81fbf-362e-4639-903f-6873fd1813e4"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[MOSAIQUE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="c9b4f057-8ec8-49b6-bd83-e3ee52c0963c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[<Saisir le texte de la note ici>]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <COMPID name="PilesCartes" mc="Standard.Class" uid="622bde93-e84e-459e-a46d-9b1921c0a851"/>
+        <COMPID name="Source" mc="Standard.Class" uid="3d0266a6-5a1c-4ded-974b-051971be28c7"/>
+        <COMPID name="Fosse" mc="Standard.Class" uid="62cdc3c1-9e8f-4b14-a902-2e4d552a3f9f"/>
+        <COMPID name="Main" mc="Standard.Class" uid="a436383c-0d77-4e86-8dbb-cb9902a0bf6e"/>
+        <COMPID name="Pile" mc="Standard.Class" uid="a24c2f9e-584f-4c2f-96ed-e763d025f4d4"/>
+        <COMPID name="VieFuture" mc="Standard.Class" uid="7adf59ac-4f6a-4a71-aa92-11b95b83fff5"/>
+        <COMPID name="Oeuvres" mc="Standard.Class" uid="953ba51e-ba5b-40c3-8f0f-0df3c9f83d5c"/>
+        <OBJECT>
+          <ID name="EchelleKarmique" mc="Standard.Enumeration" uid="20bb3668-3374-48b6-872b-4f58440ad579"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[EchelleKarmique]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="BOUSIER" mc="Standard.EnumerationLiteral" uid="5fce1045-0f70-4a0c-b475-164579d26272"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BOUSIER]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="SERPENT" mc="Standard.EnumerationLiteral" uid="d0ac9f5a-d7c0-4b7d-85a8-7a076aee9299"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[SERPENT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="LOUP" mc="Standard.EnumerationLiteral" uid="0808c949-fff9-4764-9192-22e50f23c3ef"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[LOUP]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="SINGE" mc="Standard.EnumerationLiteral" uid="90be0388-c343-4c6c-8af0-1f2ea6947d72"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[SINGE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <COMP relation="Product">
         <COMPID name="Diagramme de classe karmaka" mc="Standard.ClassDiagram" uid="7330627e-65c8-4667-a942-9258c6e0f67d"/>
