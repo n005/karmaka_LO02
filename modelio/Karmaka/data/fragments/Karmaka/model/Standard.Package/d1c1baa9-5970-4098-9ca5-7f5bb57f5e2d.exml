@@ -44,7 +44,6 @@
         <COMPID name="Mimetisme" mc="Standard.Class" uid="697abc3f-dab5-4422-9b2a-158033e74872"/>
         <COMPID name="Joueur" mc="Standard.Class" uid="d6ce72c4-81aa-4d93-9abd-3099817addef"/>
         <COMPID name="JoueurVirtuel" mc="Standard.Class" uid="1409589d-3190-421c-88bd-f7d180731309"/>
-        <COMPID name="Strategie" mc="Standard.Class" uid="64189e7c-7862-4e1b-8241-9f79f580a260"/>
         <COMPID name="Aleatoire" mc="Standard.Class" uid="48d928d5-08d9-4d17-ace1-4885d3570915"/>
         <COMPID name="Pouvoir" mc="Standard.Interface" uid="551e5ff9-39fc-45cf-b51f-54e18009d2ea"/>
         <OBJECT>
@@ -166,6 +165,9 @@
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
+        <COMPID name="Strategie" mc="Standard.Interface" uid="6d2504eb-fca2-4e54-87ce-9ebf9598734b"/>
+        <COMPID name="Agressif" mc="Standard.Class" uid="2cd3df9c-6a7f-414f-bef8-adf2726b0da5"/>
+        <COMPID name="Defensif" mc="Standard.Class" uid="ce5fbc11-41fa-4000-9970-6071c10e9bd1"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="Diagramme de classe karmaka" mc="Standard.ClassDiagram" uid="7330627e-65c8-4667-a942-9258c6e0f67d"/>

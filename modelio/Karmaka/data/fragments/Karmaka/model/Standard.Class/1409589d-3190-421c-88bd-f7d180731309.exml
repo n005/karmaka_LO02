@@ -33,7 +33,7 @@
       </COMP>
       <COMP relation="OwnedEnd">
         <OBJECT>
-          <ID name="strategie" mc="Standard.AssociationEnd" uid="7cb011fa-bd88-4450-8d8e-5b8460caa029"/>
+          <ID name="strategie" mc="Standard.AssociationEnd" uid="86441b1a-b2a9-461d-ad51-caf0ac2a8128"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsAssociation</ATT>
             <ATT name="IsChangeable">true</ATT>
@@ -41,7 +41,7 @@
             <ATT name="IsDerived">false</ATT>
             <ATT name="IsOrdered">false</ATT>
             <ATT name="IsUnique">false</ATT>
-            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
             <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
             <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">false</ATT>
@@ -51,11 +51,11 @@
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Target">
-              <ID name="Strategie" mc="Standard.Class" uid="64189e7c-7862-4e1b-8241-9f79f580a260"/>
+              <ID name="Strategie" mc="Standard.Interface" uid="6d2504eb-fca2-4e54-87ce-9ebf9598734b"/>
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Standard.AssociationEnd" uid="d2e34c4c-f2a2-4111-87df-e993d5834f6c"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="c2dc0c7c-f62e-47a6-81f8-4df274ed46a1"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
@@ -63,7 +63,7 @@
                   <ATT name="IsDerived">false</ATT>
                   <ATT name="IsOrdered">false</ATT>
                   <ATT name="IsUnique">false</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
                   <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
                   <ATT name="Visibility">Public</ATT>
                   <ATT name="IsClass">false</ATT>
@@ -73,11 +73,11 @@
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Opposite">
-                    <COMPID name="strategie" mc="Standard.AssociationEnd" uid="7cb011fa-bd88-4450-8d8e-5b8460caa029"/>
+                    <COMPID name="strategie" mc="Standard.AssociationEnd" uid="86441b1a-b2a9-461d-ad51-caf0ac2a8128"/>
                   </COMP>
                   <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Standard.Association" uid="f70a61df-c79d-47cd-8f65-42ffd25fccce"/>
+                      <ID name="" mc="Standard.Association" uid="61d6b782-2a08-4ae4-aa80-62b710343b2f"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -89,7 +89,7 @@
               </OBJECT>
             </COMP>
             <COMP relation="Association">
-              <COMPID name="" mc="Standard.Association" uid="f70a61df-c79d-47cd-8f65-42ffd25fccce"/>
+              <COMPID name="" mc="Standard.Association" uid="61d6b782-2a08-4ae4-aa80-62b710343b2f"/>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
