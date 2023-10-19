@@ -97,30 +97,6 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="pouvoir" mc="Standard.Attribute" uid="82473288-e676-44d0-9253-600510e499d4"/>
-          <ATTRIBUTES>
-            <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"></ATT>
-            <ATT name="TargetIsClass">false</ATT>
-            <ATT name="Changeable">AccesNone</ATT>
-            <ATT name="IsDerived">false</ATT>
-            <ATT name="IsOrdered">false</ATT>
-            <ATT name="IsUnique">false</ATT>
-            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[pouvoir]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Type">
-              <ID name="Pouvoir" mc="Standard.Interface" uid="551e5ff9-39fc-45cf-b51f-54e18009d2ea"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
           <ID name="couleur" mc="Standard.Attribute" uid="2a72ee3a-c6b6-4ca0-87df-e9fb464d6c80"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
@@ -182,7 +158,7 @@
             <ATT name="IsOrdered">false</ATT>
             <ATT name="IsUnique">false</ATT>
             <ATT name="MultiplicityMin"></ATT>
-            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
             <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
@@ -236,7 +212,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="pouvoir" mc="Standard.AssociationEnd" uid="c2117f56-17f0-43e7-8c86-118c0d5e26e7"/>
+          <ID name="pouvoir" mc="Standard.AssociationEnd" uid="4cddfdca-bb17-4ec0-8acd-9c66cb70199d"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsAssociation</ATT>
             <ATT name="IsChangeable">true</ATT>
@@ -258,7 +234,7 @@
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Standard.AssociationEnd" uid="0d718dd2-75f1-4fae-87d2-e6f34f5d99e9"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="6712700d-1c10-4fe5-978e-3b892fb10857"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
@@ -276,11 +252,11 @@
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Opposite">
-                    <COMPID name="pouvoir" mc="Standard.AssociationEnd" uid="c2117f56-17f0-43e7-8c86-118c0d5e26e7"/>
+                    <COMPID name="pouvoir" mc="Standard.AssociationEnd" uid="4cddfdca-bb17-4ec0-8acd-9c66cb70199d"/>
                   </COMP>
                   <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Standard.Association" uid="ed92e19d-1d3e-4029-adf8-7ee679716d8b"/>
+                      <ID name="" mc="Standard.Association" uid="7a2f7c34-51b5-4d06-a2f2-1cc928aac76c"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -292,7 +268,7 @@
               </OBJECT>
             </COMP>
             <COMP relation="Association">
-              <COMPID name="" mc="Standard.Association" uid="ed92e19d-1d3e-4029-adf8-7ee679716d8b"/>
+              <COMPID name="" mc="Standard.Association" uid="7a2f7c34-51b5-4d06-a2f2-1cc928aac76c"/>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>

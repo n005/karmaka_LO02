@@ -31,7 +31,6 @@
         <COMPID name="Longevite" mc="Standard.Class" uid="25701a0b-ead6-4e4f-9281-a299f3bf74c9"/>
         <COMPID name="Semis" mc="Standard.Class" uid="1dc7e8f7-d684-45eb-8c01-906e450b3da0"/>
         <COMPID name="Voyage" mc="Standard.Class" uid="9519c32d-6253-427c-9bc4-6080da4433fe"/>
-        <COMPID name="Panique" mc="Standard.Class" uid="5231ade3-8de0-48c9-b873-80a12681c1ae"/>
         <COMPID name="Jubile" mc="Standard.Class" uid="720e85e2-8201-4fa5-8671-6c45f02f894e"/>
         <COMPID name="DernierSoufle" mc="Standard.Class" uid="5a29d77b-9acc-4c2e-9daf-13eefdbcf7f1"/>
         <COMPID name="Roulette" mc="Standard.Class" uid="ad656fdb-a7f1-4a2e-bd6e-08dd986d77f3"/>
@@ -113,10 +112,6 @@
         <COMPID name="PilesCartes" mc="Standard.Class" uid="622bde93-e84e-459e-a46d-9b1921c0a851"/>
         <COMPID name="Source" mc="Standard.Class" uid="3d0266a6-5a1c-4ded-974b-051971be28c7"/>
         <COMPID name="Fosse" mc="Standard.Class" uid="62cdc3c1-9e8f-4b14-a902-2e4d552a3f9f"/>
-        <COMPID name="Main" mc="Standard.Class" uid="a436383c-0d77-4e86-8dbb-cb9902a0bf6e"/>
-        <COMPID name="Pile" mc="Standard.Class" uid="a24c2f9e-584f-4c2f-96ed-e763d025f4d4"/>
-        <COMPID name="VieFuture" mc="Standard.Class" uid="7adf59ac-4f6a-4a71-aa92-11b95b83fff5"/>
-        <COMPID name="Oeuvres" mc="Standard.Class" uid="953ba51e-ba5b-40c3-8f0f-0df3c9f83d5c"/>
         <OBJECT>
           <ID name="EchelleKarmique" mc="Standard.Enumeration" uid="20bb3668-3374-48b6-872b-4f58440ad579"/>
           <ATTRIBUTES>
