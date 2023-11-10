@@ -1,5 +1,5 @@
 package fr.utt.karmaka;
 
-public class main {
+public class Main {
 
 }
