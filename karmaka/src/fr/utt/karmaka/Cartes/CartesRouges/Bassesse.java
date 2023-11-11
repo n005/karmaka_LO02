@@ -1,4 +1,4 @@
-package fr.utt.karmaka;
+package fr.utt.karmaka.Cartes.CartesRouges;
 
 public class Bassesse {
 	
