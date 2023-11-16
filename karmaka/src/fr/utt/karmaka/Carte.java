@@ -5,6 +5,12 @@ public class Carte {
 	private int nbCartes;
 	private String nom;
 	
+	public Carte(int points, int nbCartes, String nom) {
+		this.setPoints(points);
+		this.setNbCartes(nbCartes);
+		this.setNom(nom);
+	}
+	
 	public void jouerPouvoir() {
 		
 	}
