@@ -11,6 +11,12 @@ public class Carte {
 		this.setNom(nom);
 	}
 	
+	public String toString() {
+		StringBuffer sb = new StringBuffer();	
+		sb.append("Carte "+nom + ", points : " +points + ", nombre de carte :" +nbCartes + "\n");
+		return sb.toString();
+	}
+	
 	public void jouerPouvoir() {
 		
 	}

@@ -6,18 +6,38 @@ import java.util.*;
 public class Joueur {
 	private String nom;
 	private int anneauxKarmique;
+	private int points;
 	private PilesCartes pile;
 	private PilesCartes vieFuture;
 	private PilesCartes main;
 	private PilesCartes oeuvres;
 	private EchelleKarmique echelonKarmique;
 	
-	public Joueur(String nom, PilesCartes pile, PilesCartes main) {
+	public Joueur(String nom) {
 		this.setNom(nom);
-		this.setPile(pile);
-		this.setMain(main);
+		
 	}
 	
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("\n ******************************************* \n");		
+		sb.append(this.nom + " a  " +  this.points + " points et "+ this.anneauxKarmique +" anneaux Karmiques\n");
+		sb.append("Pile : "+this.pile+"\n");
+		sb.append("Vie Future : "+this.vieFuture+"\n");
+		sb.append("Main : "+this.main+"\n");
+		sb.append("Oeuvres : "+this.oeuvres+"\n");
+		sb.append("\n ******************************************* \n");
+		return sb.toString();
+	}
+	
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
+	}
+
 	public void jouerPoints(Carte carte) {
 		this.oeuvres.ajouterCarte(carte);
 		this.main.supprimerCarte(carte);

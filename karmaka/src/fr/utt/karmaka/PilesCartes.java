@@ -3,7 +3,11 @@ package fr.utt.karmaka;
 import java.util.*;
 
 public class PilesCartes {
-	private List<Carte> cartes;
+	protected ArrayList<Carte> cartes;
+	
+	public PilesCartes() {
+		this.cartes = new ArrayList<Carte>();
+	}
 	
 	public void supprimerCarte(Carte carte) {
 		this.cartes.remove(carte);
@@ -17,7 +21,7 @@ public class PilesCartes {
 		return this.cartes.get(index);
 	}
 	
-	public void setCartes(List<Carte> cartes) {
+	public void setCartes(ArrayList<Carte> cartes) {
 		this.cartes = cartes;
 	}
 
@@ -34,4 +38,19 @@ public class PilesCartes {
 	public int getSize() {
 		return this.cartes.size();
 	}
+	
+	public void melanger(){
+		Collections.shuffle(cartes);
+	}
+	
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		Iterator<Carte> it = cartes.iterator();
+		while (it.hasNext()) {
+			sb.append(it.next().toString());
+		}
+			
+		return sb.toString();
+	}
+	
 }
