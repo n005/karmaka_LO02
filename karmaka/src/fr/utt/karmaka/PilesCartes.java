@@ -2,6 +2,7 @@ package fr.utt.karmaka;
 
 import java.util.*;
 
+
 public class PilesCartes {
 	protected ArrayList<Carte> cartes;
 	
@@ -51,6 +52,16 @@ public class PilesCartes {
 		}
 			
 		return sb.toString();
+	}
+	
+	// retire la premiére carte de la pile de cartes 
+	public Carte distribuerUneCarte(){ 
+		Carte c;
+		// on retire la carte du dessus de la pile de cartes
+		c= this.cartes.get(0);
+		this.cartes.remove(0);
+	return c;
+		
 	}
 	
 }

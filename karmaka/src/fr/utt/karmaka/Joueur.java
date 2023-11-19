@@ -15,6 +15,11 @@ public class Joueur {
 	
 	public Joueur(String nom) {
 		this.setNom(nom);
+		this.pile = new PilesCartes();
+		this.vieFuture = new PilesCartes();
+		this.main = new PilesCartes();
+		this.oeuvres = new PilesCartes();
+		
 		
 	}
 	
@@ -22,10 +27,10 @@ public class Joueur {
 		StringBuffer sb = new StringBuffer();
 		sb.append("\n ******************************************* \n");		
 		sb.append(this.nom + " a  " +  this.points + " points et "+ this.anneauxKarmique +" anneaux Karmiques\n");
-		sb.append("Pile : "+this.pile+"\n");
-		sb.append("Vie Future : "+this.vieFuture+"\n");
-		sb.append("Main : "+this.main+"\n");
-		sb.append("Oeuvres : "+this.oeuvres+"\n");
+		sb.append("Pile : \n"+this.pile+"\n");
+		sb.append("Vie Future : \n"+this.vieFuture+"\n");
+		sb.append("Main : \n"+this.main+"\n");
+		sb.append("Oeuvres : \n"+this.oeuvres+"\n");
 		sb.append("\n ******************************************* \n");
 		return sb.toString();
 	}
@@ -96,6 +101,9 @@ public class Joueur {
 		this.pile = pile;
 	}
 
+	public void ajouterPile(Carte carte) {
+		this.pile.ajouterCarte(carte);
+	}
 	public PilesCartes getVieFuture() {
 		return vieFuture;
 	}
@@ -110,6 +118,10 @@ public class Joueur {
 
 	public void setMain(PilesCartes main) {
 		this.main = main;
+	}
+	
+	public void ajouterMain(Carte carte) {
+		this.main.ajouterCarte(carte);
 	}
 
 	public PilesCartes getOeuvres() {
