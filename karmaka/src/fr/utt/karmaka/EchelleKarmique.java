@@ -4,5 +4,6 @@ public enum EchelleKarmique {
 	BOUSIER,
 	SERPENT,
 	LOUP,
-	SINGE
+	SINGE,
+	TRANSCENDANCE
 }

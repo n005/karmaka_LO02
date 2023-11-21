@@ -19,14 +19,14 @@ public class Joueur {
 		this.vieFuture = new PilesCartes();
 		this.main = new PilesCartes();
 		this.oeuvres = new PilesCartes();
-		
+		this.echelonKarmique= EchelleKarmique.BOUSIER;
 		
 	}
 	
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("\n ******************************************* \n");		
-		sb.append(this.nom + " a  " +  this.points + " points et "+ this.anneauxKarmique +" anneaux Karmiques\n");
+		sb.append(this.nom +" est à l'echellon "+this.echelonKarmique + ", a  " +  this.points + " points et "+ this.anneauxKarmique +" anneaux Karmiques\n");
 		sb.append("Pile : \n"+this.pile+"\n");
 		sb.append("Vie Future : \n"+this.vieFuture+"\n");
 		sb.append("Main : \n"+this.main+"\n");
@@ -70,6 +70,12 @@ public class Joueur {
 	}
 	
 	public void passer() {
+		if(this.pile.getSize()!=0) {
+			//passer le tour
+		}
+		else {
+			//forcer le joueur à jouer 
+		}
 		
 	}
 	
