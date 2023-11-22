@@ -13,9 +13,10 @@ public class Carte {
 	
 	public String toString() {
 		StringBuffer sb = new StringBuffer();	
-		sb.append("Carte "+nom + ", points : " +points + ", nombre de carte :" +nbCartes + "\n");
+		sb.append(nom + "(" +points+" points, "+ nbCartes+" cartes dans le paquet)" +"\n");
 		return sb.toString();
 	}
+	
 	
 	public void jouerPouvoir() {
 		

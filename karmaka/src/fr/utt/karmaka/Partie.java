@@ -45,26 +45,39 @@ public class Partie {
 		Joueur j = new Joueur(nom);
 		return j;
 	}
+	
+	public int choisirCarteAJouer(Joueur j) {
+		System.out.println(j.mainToString());
+		System.out.println("Taper le numéro de la carte que vous voulez jouer :");
+		Scanner scCarte = new Scanner(System.in);
+		int numCarte = scCarte.nextInt();
+		return numCarte;
+	}
 
 	public void jouerUnTour(Joueur j) {
 		//debut du tour
 		j.piocher();
+		System.out.println("C'est au tour de "+j.getNom());
+		System.out.println(j);
 		// choix des actions du joueur
 		Scanner scChoix = new Scanner(System.in);
 		System.out.println("Taper 1 pour jouer une carte pour ses points, 2 pour son pouvoir, 3 pour votre futur, 4 pour passer");
 		int choix = scChoix.nextInt();
 		switch (choix) {
 		case 1: {
-			System.out.println("");
+			int numCarte = this.choisirCarteAJouer(j);
+			j.jouerPoints(numCarte);
 			break;
 		}
 		case 2: {
-			System.out.println("");
+			int numCarte = this.choisirCarteAJouer(j);
+			j.jouePouvoir(numCarte);
 			break;
 
 		}
 		case 3: {
-			System.out.println("");
+			int numCarte = this.choisirCarteAJouer(j);
+			j.jouerFuture(numCarte);
 			break;
 
 		}
@@ -111,6 +124,7 @@ public class Partie {
 		System.out.println("Bienvenue dans Karmaka !");
 
 		// choix du mode de jeu
+		
 		Scanner scChoix = new Scanner(System.in);
 		System.out.println("Taper 1 pour jouer contre l'ordinateur ou 2 pour jouer avec quelqu'un :");
 		int choix = scChoix.nextInt();
@@ -133,18 +147,19 @@ public class Partie {
 		}
 
 		/*
-		 * // création des joueurs Joueur joueur1 = new Joueur("J1"); Joueur joueur2 =
-		 * new Joueur("J2");
-		 * 
-		 * // on ajoute les 2 joueurs à la partie karmaka.ajouterUnJoueur(joueur1);
-		 * karmaka.ajouterUnJoueur(joueur2);
-		 * 
-		 * System.out.println(joueur1);
-		 * 
-		 * System.out.println(karmaka.source);
-		 * 
-		 * karmaka.DonnerCarteMiseEnPlace(joueur1, joueur2);
-		 * System.out.println(joueur1);
-		 */
+		  //création des joueurs 
+		  Joueur joueur1 = new Joueur("J1"); 
+		  Joueur joueur2 = new Joueur("J2");
+		  
+		  // on ajoute les 2 joueurs à la partie karmaka.ajouterUnJoueur(joueur1);
+		  karmaka.ajouterUnJoueur(joueur2);
+		  
+		  System.out.println(joueur1);
+		  
+		  System.out.println(karmaka.source);
+		  
+		  karmaka.DonnerCarteMiseEnPlace(joueur1, joueur2);
+		  System.out.println(joueur1);
+		*/ 
 	}
 }

@@ -27,11 +27,21 @@ public class Joueur {
 		StringBuffer sb = new StringBuffer();
 		sb.append("\n ******************************************* \n");		
 		sb.append(this.nom +" est à l'echellon "+this.echelonKarmique + ", a  " +  this.points + " points et "+ this.anneauxKarmique +" anneaux Karmiques\n");
+		//La pile ne doit pas être devoilée quand on joue
 		sb.append("Pile : \n"+this.pile+"\n");
 		sb.append("Vie Future : \n"+this.vieFuture+"\n");
 		sb.append("Main : \n"+this.main+"\n");
 		sb.append("Oeuvres : \n"+this.oeuvres+"\n");
 		sb.append("\n ******************************************* \n");
+		return sb.toString();
+	}
+	
+	public String mainToString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("Votre Main :\n");
+		for (int i=0;i<this.main.getSize();i++) {
+			sb.append(i+" : "+ this.main.getCarte(i));
+		}
 		return sb.toString();
 	}
 	
@@ -43,12 +53,16 @@ public class Joueur {
 		this.points = points;
 	}
 
-	public void jouerPoints(Carte carte) {
+	public void jouerPoints(int indexCarte) {
+		Carte carte = this.main.getCarte(indexCarte);
 		this.oeuvres.ajouterCarte(carte);
 		this.main.supprimerCarte(carte);
+		//mettre a jour les points du joueur
+		this.compterPointsOeuvres();
 	}
 	
-	public void jouerFuture(Carte carte) {
+	public void jouerFuture(int indexCarte) {
+		Carte carte = this.main.getCarte(indexCarte);
 		this.vieFuture.ajouterCarte(carte);
 		this.main.supprimerCarte(carte);
 	}
@@ -65,7 +79,7 @@ public class Joueur {
 		
 	}
 	
-	public void jouePouvoir(Carte carte) {
+	public void jouePouvoir(int indexCarte) {
 		
 	}
 	
@@ -80,7 +94,12 @@ public class Joueur {
 	}
 	
 	public void compterPointsOeuvres() {
-		
+		int nbPoints = 0;
+		for(int i=0; i<this.oeuvres.getSize();i++) {
+			Carte c =this.oeuvres.getCarte(i);
+			nbPoints += c.getPoints();
+		}
+		this.setPoints(nbPoints);
 	}
 
 	public String getNom() {
