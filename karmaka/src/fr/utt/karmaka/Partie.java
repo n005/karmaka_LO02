@@ -17,7 +17,7 @@ public class Partie {
 		this.listeJoueur.add(joueur);
 	}
 
-	public void DonnerCarteMiseEnPlace(Joueur j1, Joueur j2) {
+/*	public void DonnerCarteMiseEnPlace(Joueur j1, Joueur j2) {
 		source.melanger();
 		// main de départ
 		for (int i = 0; i < 4; i++) {
@@ -37,7 +37,25 @@ public class Partie {
 		}
 
 	}
-
+*/
+	public void DonnerCarteMiseEnPlace(Joueur... joueurs) {
+		source.melanger();
+		// main de départ
+		for (Joueur joueur : joueurs) {
+		for (int i = 0; i < 4; i++) {
+			Carte c;
+			c = source.distribuerUneCarte();
+			joueur.ajouterMain(c);
+		}
+		// pile initiale
+		for (int i = 0; i < 2; i++) {
+			Carte c;
+			c = source.distribuerUneCarte();
+			joueur.ajouterPile(c);
+		}
+		}
+	}
+	
 	public Joueur creerJoueur() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Saisiser le nom du joueur :");
