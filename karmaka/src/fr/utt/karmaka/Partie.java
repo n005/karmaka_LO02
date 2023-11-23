@@ -111,7 +111,7 @@ public class Partie {
 		}
 	}
 
-	public void jeuDeuxJoueurs() {
+	public void jeuDeuxJoueurs() { //NB: Add generalisation here
 		// création des joueurs et ajout
 		Joueur joueur1 = this.creerJoueur();
 		this.ajouterUnJoueur(joueur1);
