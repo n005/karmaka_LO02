@@ -38,6 +38,17 @@ public class Partie {
 
 	}
 
+	public void rennaitre(Joueur j) {
+		j.rennaissance();
+		//Creer la nouvelle pile
+		while((j.getMain().getSize()+j.getPile().getSize())<6) {
+		//piocher des cartes a la source et les ajouter a la pile du joueur
+			Carte c;
+			c= source.distribuerUneCarte();
+			j.ajouterPile(c);
+		}
+	}
+	
 	public Joueur creerJoueur() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Saisiser le nom du joueur :");
@@ -55,6 +66,10 @@ public class Partie {
 	}
 
 	public void jouerUnTour(Joueur j) {
+		if(j.getPile().getSize()==0&&j.getMain().getSize()==0) {
+			
+		}
+		else {
 		//debut du tour
 		j.piocher();
 		System.out.println("C'est au tour de "+j.getNom());
@@ -71,7 +86,9 @@ public class Partie {
 		}
 		case 2: {
 			int numCarte = this.choisirCarteAJouer(j);
+			//appeler le bon pouvoir de la carte
 			j.jouePouvoir(numCarte);
+			//proposer à l'autre joueur de recup la carte
 			break;
 
 		}
@@ -82,14 +99,20 @@ public class Partie {
 
 		}
 		case 4: {
-			j.passer();
-			System.out.println("");
-			break;
+			boolean passable =j.passer();
+			if(passable) {
+				break;
+			}
+			else {
+				System.out.println("Vous ne pouvez pas passer votre tour car votre pile est vide");
+				//reproposer le choix
+			}
 
 		}
 		default:
 			System.out.println("choix incorect");
 			break;
+		}
 		}
 	}
 
@@ -101,8 +124,8 @@ public class Partie {
 		this.ajouterUnJoueur(joueur2);
 		// distribution des cartes
 		this.DonnerCarteMiseEnPlace(joueur1, joueur2);
-		System.out.println(joueur1);
-		System.out.println(joueur2);
+		//System.out.println(joueur1);
+		//System.out.println(joueur2);
 		while ((joueur1.getEchelonKarmique() != EchelleKarmique.TRANSCENDANCE)
 				|| (joueur1.getEchelonKarmique() != EchelleKarmique.TRANSCENDANCE)) {
 			this.jouerUnTour(joueur1);

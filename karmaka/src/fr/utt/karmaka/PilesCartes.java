@@ -64,4 +64,9 @@ public class PilesCartes {
 		
 	}
 	
+	public void viderPile() {
+		cartes.clear();
+	}
+	
+	
 }

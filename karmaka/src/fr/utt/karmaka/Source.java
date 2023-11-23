@@ -1,7 +1,5 @@
 package fr.utt.karmaka;
 
-import java.util.Iterator;
-
 import fr.utt.karmaka.Cartes.CartesBleues.CartesBleues;
 import fr.utt.karmaka.Cartes.CartesBleues.CoupDoeil;
 import fr.utt.karmaka.Cartes.CartesBleues.Deni;

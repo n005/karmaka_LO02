@@ -57,8 +57,6 @@ public class Joueur {
 		Carte carte = this.main.getCarte(indexCarte);
 		this.oeuvres.ajouterCarte(carte);
 		this.main.supprimerCarte(carte);
-		//mettre a jour les points du joueur
-		this.compterPointsOeuvres();
 	}
 	
 	public void jouerFuture(int indexCarte) {
@@ -83,23 +81,95 @@ public class Joueur {
 		
 	}
 	
-	public void passer() {
+	public boolean passer() {
+		boolean passable;
 		if(this.pile.getSize()!=0) {
-			//passer le tour
+			passable=true;
 		}
 		else {
-			//forcer le joueur à jouer 
+			passable=false;
 		}
+		return passable;
 		
 	}
 	
-	public void compterPointsOeuvres() {
-		int nbPoints = 0;
+	//on compte les points par couleur, les cartes mosaiques comptes dans toutes les couleurs
+	//le joueur recois les points de sa couleur la plus rentable 
+	public int compterPointsOeuvres() {
+		int[] nbPointsCouleur = {0,0,0};//0 Rouge, 1 Vert, 2 Bleu 
 		for(int i=0; i<this.oeuvres.getSize();i++) {
 			Carte c =this.oeuvres.getCarte(i);
-			nbPoints += c.getPoints();
+			switch (c.getCouleur()) {
+			case "Rouge": 
+				nbPointsCouleur[0] += c.getPoints();
+				break;
+			case "Verte":
+				nbPointsCouleur[1] += c.getPoints();
+				break;
+			case "Bleue":
+				nbPointsCouleur[2] += c.getPoints();
+				break;
+			case "Mosaique":
+				nbPointsCouleur[0] += c.getPoints();
+				nbPointsCouleur[1] += c.getPoints();
+				nbPointsCouleur[2] += c.getPoints();
+				break;
+			default:
+				break;
+			}
+			
 		}
-		this.setPoints(nbPoints);
+		return Arrays.stream(nbPointsCouleur).max().getAsInt();
+	}
+	
+	
+	public void rennaissance() {
+		//defaussez les oeuvres dans la fosse
+		oeuvres.viderPile();
+		//Les cartes de la vieFuture constituent la nouvelle main
+		for(int i=0;i<vieFuture.getSize();i++) {
+			Carte c = vieFuture.getCarte(i);
+			main.ajouterCarte(c);
+			vieFuture.supprimerCarte(i);
+		}
+		//marquer les points
+		points=compterPointsOeuvres();
+		
+		//passer à l'échellon supérieur ou pas
+		switch(getEchelonKarmique()) {
+		//4 points 
+		case BOUSIER:
+			if(points>=4) {
+				setEchelonKarmique(EchelleKarmique.SERPENT);
+				points=0;
+			}
+			
+			break;
+		//5 points
+		case SERPENT:
+			if(points>=5){
+				setEchelonKarmique(EchelleKarmique.LOUP);
+				points=0;
+				}
+			break;
+		//6 pts
+		case LOUP:
+			if(points>=6) {
+			setEchelonKarmique(EchelleKarmique.SINGE);
+			points=0;
+			}
+			break;
+		//è pts
+		case SINGE:
+			if(points>=7) {
+			setEchelonKarmique(EchelleKarmique.TRANSCENDANCE);
+			points=0;
+			}
+			break;
+		default:
+			break;
+		
+		}
 	}
 
 	public String getNom() {

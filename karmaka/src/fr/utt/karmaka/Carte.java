@@ -4,11 +4,21 @@ public class Carte {
 	private int points;
 	private int nbCartes;
 	private String nom;
+	private String couleur;
 	
-	public Carte(int points, int nbCartes, String nom) {
+	public String getCouleur() {
+		return couleur;
+	}
+
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+
+	public Carte(int points, int nbCartes, String nom, String couleur) {
 		this.setPoints(points);
 		this.setNbCartes(nbCartes);
 		this.setNom(nom);
+		this.setCouleur(nom);
 	}
 	
 	public String toString() {
