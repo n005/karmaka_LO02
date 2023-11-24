@@ -17,27 +17,6 @@ public class Partie {
 		this.listeJoueur.add(joueur);
 	}
 
-	public void DonnerCarteMiseEnPlace(Joueur j1, Joueur j2) {
-		source.melanger();
-		// main de départ
-		for (int i = 0; i < 4; i++) {
-			Carte c;
-			c = source.distribuerUneCarte();
-			j1.ajouterMain(c);
-			c = source.distribuerUneCarte();
-			j2.ajouterMain(c);
-		}
-		// pile initiale
-		for (int i = 0; i < 2; i++) {
-			Carte c;
-			c = source.distribuerUneCarte();
-			j1.ajouterPile(c);
-			c = source.distribuerUneCarte();
-			j2.ajouterPile(c);
-		}
-
-	}
-
 	public void rennaitre(Joueur j) {
 		j.rennaissance();
 		//Creer la nouvelle pile
@@ -46,6 +25,24 @@ public class Partie {
 			Carte c;
 			c= source.distribuerUneCarte();
 			j.ajouterPile(c);
+		}
+	}
+	
+	public void DonnerCarteMiseEnPlace(Joueur... joueurs) {
+		source.melanger();
+		// main de départ
+		for (Joueur joueur : joueurs) {
+		for (int i = 0; i < 4; i++) {
+			Carte c;
+			c = source.distribuerUneCarte();
+			joueur.ajouterMain(c);
+		}
+		// pile initiale
+		for (int i = 0; i < 2; i++) {
+			Carte c;
+			c = source.distribuerUneCarte();
+			joueur.ajouterPile(c);
+		}
 		}
 	}
 	
@@ -67,7 +64,7 @@ public class Partie {
 
 	public void jouerUnTour(Joueur j) {
 		if(j.getPile().getSize()==0&&j.getMain().getSize()==0) {
-			
+			this.rennaitre(j);
 		}
 		else {
 		//debut du tour
@@ -116,7 +113,7 @@ public class Partie {
 		}
 	}
 
-	public void jeuDeuxJoueurs() {
+	public void jeuDeuxJoueurs() { //NB: Add generalisation here
 		// création des joueurs et ajout
 		Joueur joueur1 = this.creerJoueur();
 		this.ajouterUnJoueur(joueur1);

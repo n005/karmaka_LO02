@@ -172,6 +172,15 @@ public class Joueur {
 		}
 	}
 
+	public Boolean aGagner() {
+		if (this.getEchelonKarmique() == EchelleKarmique.TRANSCENDANCE) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	public String getNom() {
 		return nom;
 	}
