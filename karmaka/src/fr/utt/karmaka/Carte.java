@@ -18,7 +18,7 @@ public class Carte {
 		this.setPoints(points);
 		this.setNbCartes(nbCartes);
 		this.setNom(nom);
-		this.setCouleur(nom);
+		this.setCouleur(couleur);
 	}
 	
 	public String toString() {

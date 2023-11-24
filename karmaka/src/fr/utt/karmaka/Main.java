@@ -15,6 +15,16 @@ public class Main {
 		
 		while (!(joueurVirtuel2.aGagner() || joueurVirtuel1.aGagner())) {
 			//partie.jouerUnTour(joueur1);
+			if(joueurVirtuel1.getPile().getSize()==0&&joueurVirtuel1.getMain().getSize()==0) {
+				partie.rennaitre(joueurVirtuel1);
+				System.out.println(joueurVirtuel1.compterPointsOeuvres());
+				System.out.println("Renaissance1");
+			}
+			if(joueurVirtuel2.getPile().getSize()==0&&joueurVirtuel2.getMain().getSize()==0) {
+				partie.rennaitre(joueurVirtuel2);
+				System.out.println(joueurVirtuel1.compterPointsOeuvres());
+				System.out.println("Renaissance2");
+			}
 			System.out.println("C'est au tour de "+joueurVirtuel1.getNom());
 			System.out.println(joueurVirtuel1);
 			joueurVirtuel1.jouerBot();
@@ -23,7 +33,12 @@ public class Main {
 			System.out.println(joueurVirtuel2);
 			joueurVirtuel2.jouerBot();
 		}
-		
+		if (joueurVirtuel2.aGagner()) {
+			System.out.println("Joueur virt2 a gagne");
+		}
+		if (joueurVirtuel1.aGagner()) {
+			System.out.println("Joueur virt1 a gagne");
+		}
 		
 	}
 }

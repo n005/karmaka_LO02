@@ -124,6 +124,8 @@ public class Joueur {
 	
 	
 	public void rennaissance() {
+		//marquer les points
+		points=compterPointsOeuvres();
 		//defaussez les oeuvres dans la fosse
 		oeuvres.viderPile();
 		//Les cartes de la vieFuture constituent la nouvelle main
@@ -132,8 +134,6 @@ public class Joueur {
 			main.ajouterCarte(c);
 			vieFuture.supprimerCarte(i);
 		}
-		//marquer les points
-		points=compterPointsOeuvres();
 		
 		//passer à l'échellon supérieur ou pas
 		switch(getEchelonKarmique()) {

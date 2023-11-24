@@ -4,7 +4,7 @@ import fr.utt.karmaka.Carte;
 
 public class CartesVertes extends Carte{
 	public CartesVertes(int points, int nbCartes, String nom) {
-		super(points, nbCartes, nom,"verte");
+		super(points, nbCartes, nom,"Verte");
 	}
 
 	
