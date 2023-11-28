@@ -127,7 +127,7 @@ public class Joueur {
 		//marquer les points
 		points=compterPointsOeuvres();
 		//defaussez les oeuvres dans la fosse
-		oeuvres.viderPile();
+		//oeuvres.viderPile();
 		//Les cartes de la vieFuture constituent la nouvelle main
 		for(int i=0;i<vieFuture.getSize();i++) {
 			Carte c = vieFuture.getCarte(i);
@@ -141,35 +141,40 @@ public class Joueur {
 		case BOUSIER:
 			if(points>=4) {
 				setEchelonKarmique(EchelleKarmique.SERPENT);
-				points=0;
 			}
+			else
+				anneauxKarmique +=1;
 			
 			break;
 		//5 points
 		case SERPENT:
 			if(points>=5){
 				setEchelonKarmique(EchelleKarmique.LOUP);
-				points=0;
 				}
+			else
+				anneauxKarmique +=1;
 			break;
 		//6 pts
 		case LOUP:
 			if(points>=6) {
 			setEchelonKarmique(EchelleKarmique.SINGE);
-			points=0;
 			}
+			else
+				anneauxKarmique +=1;
 			break;
-		//è pts
+		//7 pts
 		case SINGE:
 			if(points>=7) {
 			setEchelonKarmique(EchelleKarmique.TRANSCENDANCE);
-			points=0;
 			}
+			else
+				anneauxKarmique +=1;
 			break;
 		default:
 			break;
 		
 		}
+		points=0;
 	}
 
 	public Boolean aGagner() {
@@ -236,6 +241,10 @@ public class Joueur {
 		this.oeuvres = oeuvres;
 	}
 
+	public void viderOeuvres() {
+		this.oeuvres.viderPile();
+	}
+	
 	public EchelleKarmique getEchelonKarmique() {
 		return echelonKarmique;
 	}

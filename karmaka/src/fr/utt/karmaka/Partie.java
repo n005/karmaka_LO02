@@ -5,10 +5,12 @@ import java.util.*;
 public class Partie {
 	private ArrayList<Joueur> listeJoueur;
 	private Source source;
+	private Fosse fosse;
 
 	public Partie() {
 		this.listeJoueur = new ArrayList<Joueur>();
 		this.source = new Source();
+		this.fosse = new Fosse();
 
 	}
 
@@ -19,6 +21,9 @@ public class Partie {
 
 	public void rennaitre(Joueur j) {
 		j.rennaissance();
+		//defausser les ouevres dans la fosse
+		this.fosse.ajouterCarte(j.getOeuvres());
+		j.viderOeuvres();
 		//Creer la nouvelle pile
 		while((j.getMain().getSize()+j.getPile().getSize())<6) {
 		//piocher des cartes a la source et les ajouter a la pile du joueur
@@ -63,6 +68,13 @@ public class Partie {
 	}
 
 	public void jouerUnTour(Joueur j) {
+		System.out.println(this.source);
+		System.out.println(this.fosse);
+		//verifier que la source n'est pas vide
+		//si elle est vide, on reprends les cartes de la fosse pour les ajouter à la source (sauf les 3premières)
+		if(this.source.getSize()==0) {
+			this.source.ajouterCarte(this.fosse.recupererCartesFosse());
+		}
 		if(j.getPile().getSize()==0&&j.getMain().getSize()==0) {
 			this.rennaitre(j);
 		}
@@ -98,6 +110,7 @@ public class Partie {
 		case 4: {
 			boolean passable =j.passer();
 			if(passable) {
+				System.out.println("Vous passez votre tour.");
 				break;
 			}
 			else {

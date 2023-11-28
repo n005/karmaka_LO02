@@ -30,6 +30,13 @@ public class PilesCartes {
 		this.cartes.add(carte);
 		
 	}
+	
+	public void ajouterCarte(PilesCartes cartes) {
+		for(int i=0;i<cartes.getSize();i++) {
+			Carte c=cartes.getCarte(i);
+			this.ajouterCarte(c);
+		}
+	}
 
 	public void supprimerCarte(int index) {
 		this.cartes.remove(index);
