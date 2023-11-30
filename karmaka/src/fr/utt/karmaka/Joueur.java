@@ -38,8 +38,17 @@ public class Joueur {
 	
 	public String mainToString() {
 		StringBuffer sb = new StringBuffer();
-		sb.append("Votre Main :\n");
+		sb.append("Main :\n");
 		for (int i=0;i<this.main.getSize();i++) {
+			sb.append(i+" : "+ this.main.getCarte(i));
+		}
+		return sb.toString();
+	}
+	
+	public String vieFutureToString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("Votre vie future :\n");
+		for (int i=0;i<this.vieFuture.getSize();i++) {
 			sb.append(i+" : "+ this.main.getCarte(i));
 		}
 		return sb.toString();
@@ -77,8 +86,21 @@ public class Joueur {
 		
 	}
 	
-	public void jouePouvoir(int indexCarte) {
+	public void jouePouvoir(Carte carte,Joueur rival, Partie p) {
+		carte.jouerPouvoir(this,rival,p);
 		
+	}
+	
+	public Carte choisirCarteADeplacer() {
+		System.out.println(this.vieFutureToString());
+		System.out.println("Taper le numéro de la carte que vous voulez déplacer :");
+		Scanner scCarte = new Scanner(System.in);
+		int numCarte = scCarte.nextInt();
+		Carte c = this.vieFuture.getCarte(numCarte);
+		//a modif
+		//suprimer la carte de vie future
+		this.vieFuture.supprimerCarte(numCarte);
+		return c;
 	}
 	
 	public boolean passer() {
@@ -221,6 +243,7 @@ public class Joueur {
 		this.vieFuture = vieFuture;
 	}
 
+	
 	public PilesCartes getMain() {
 		return main;
 	}
@@ -251,6 +274,11 @@ public class Joueur {
 
 	public void setEchelonKarmique(EchelleKarmique echelonKarmique) {
 		this.echelonKarmique = echelonKarmique;
+	}
+
+	public void ajouterVieFuture(Carte carte) {
+		this.vieFuture.ajouterCarte(carte);
+		
 	}
 	
 }

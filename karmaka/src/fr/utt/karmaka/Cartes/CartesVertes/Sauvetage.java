@@ -6,7 +6,8 @@ public class Sauvetage extends CartesVertes {
 	}
 
 	public void jouerPouvoir() {
-
+		System.out.println("Vous jouez la carte "+this.getNom());
+		
 	}
 
 }

@@ -6,6 +6,6 @@ public class Duperie extends CartesBleues {
 	}
 
 	public void jouerPouvoir() {
-
+		
 	}
 }

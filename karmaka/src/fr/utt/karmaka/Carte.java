@@ -28,7 +28,7 @@ public class Carte {
 	}
 	
 	
-	public void jouerPouvoir() {
+	public void jouerPouvoir(Joueur joueur, Joueur rival, Partie p) {
 		
 	}
 
