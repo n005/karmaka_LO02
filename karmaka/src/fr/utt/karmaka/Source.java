@@ -28,9 +28,20 @@ import fr.utt.karmaka.Cartes.CartesVertes.Sauvetage;
 import fr.utt.karmaka.Cartes.CartesVertes.Semis;
 import fr.utt.karmaka.Cartes.CartesVertes.Voyage;
 
+/**
+ * Classe Source
+ * 
+ * @version 1.0
+ * @since 1.0
+ */
 public class Source extends PilesCartes{
 
 	//permet d'instancier le nombre bon nombre de chaque carte
+	/**
+	 * Instancie le bon nombre de chaque carte
+	 * @param c
+	 * 			carte à instancier
+	 */
 	public void instancierCarte(Carte c) {
 		for(int i=0;i<c.getNbCartes();i++) {
 			this.cartes.add(c);
@@ -38,6 +49,9 @@ public class Source extends PilesCartes{
 	}
 	
 	//instancie toutes les cartes de la partie
+	/**
+	 * Constructeur de la classe Source
+	 */
 	public Source() {
 		super();
 		//cartes bleues
