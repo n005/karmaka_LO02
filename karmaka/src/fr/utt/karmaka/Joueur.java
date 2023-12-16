@@ -23,6 +23,7 @@ public class Joueur {
 		
 	}
 	
+
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("\n ******************************************* \n");		
@@ -121,6 +122,10 @@ public class Joueur {
 		int[] nbPointsCouleur = {0,0,0};//0 Rouge, 1 Vert, 2 Bleu 
 		for(int i=0; i<this.oeuvres.getSize();i++) {
 			Carte c =this.oeuvres.getCarte(i);
+			//verifie s'il y a des cartes
+			if (c == null) {
+				return Arrays.stream(nbPointsCouleur).max().getAsInt();
+			}
 			switch (c.getCouleur()) {
 			case "Rouge": 
 				nbPointsCouleur[0] += c.getPoints();
@@ -156,7 +161,7 @@ public class Joueur {
 			main.ajouterCarte(c);
 			vieFuture.supprimerCarte(i);
 		}
-		
+		points = anneauxKarmique + points; // NB: ON DEMANDE OU PAS LES ANNEAUX ?
 		//passer à l'échellon supérieur ou pas
 		switch(getEchelonKarmique()) {
 		//4 points 
