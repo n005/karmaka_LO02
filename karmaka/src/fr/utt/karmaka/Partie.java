@@ -217,4 +217,7 @@ public class Partie {
 		 * System.out.println(joueur1);
 		 */
 	}
+	public Source getSource() {
+		return this.source;
+	}
 }

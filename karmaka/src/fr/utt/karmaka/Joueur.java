@@ -103,7 +103,7 @@ public class Joueur {
 	}
 	
 	/**
-	 * Méthode qui permet de jouer une carte
+	 * Méthode qui permet de jouer une carte pour son pouvoir
 	 * 
 	 * @param carte
 	 *            carte à jouer
@@ -134,11 +134,6 @@ public class Joueur {
 		return c;
 	}
 	
-	/**
-	 * Méthode qui permet de choisir une carte à déplacer
-	 * 
-	 * @return carte à déplacer
-	 */
 	public boolean passer() {
 		boolean passable;
 		if(this.pile.getSize()!=0) {
