@@ -1,5 +1,7 @@
 package fr.utt.karmaka.Cartes.CartesBleues;
 
+import java.util.Scanner;
+
 import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.Partie;
 
@@ -19,7 +21,13 @@ public class Duperie extends CartesBleues {
 			System.out.println(p.getJoueur(numJoueur).getMain().getCarte(i).getNom());
 		}
 		System.out.println("Taper le numéro de la carte que vous voulez ajouter à votre main :");
-		int numCarte = p.choisirCarte();
+		int numCarte = this.choisirCarte();
 		j.ajouterMain(p.getJoueur(numJoueur).getMain().getCarte(numCarte));
+	}
+
+	private int choisirCarte() {
+		Scanner scCarte = new Scanner(System.in);
+		int numCarte = scCarte.nextInt();
+		return numCarte;
 	}
 }

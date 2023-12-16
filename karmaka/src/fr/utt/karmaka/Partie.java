@@ -220,4 +220,20 @@ public class Partie {
 	public Source getSource() {
 		return this.source;
 	}
+
+	public void afficherJoueurs() {
+		for (int i = 0; i < this.listeJoueur.size(); i++) {
+			System.out.println(i + " : " + this.listeJoueur.get(i).getNom());
+		}
+	}
+
+	public int choisirJoueur() {
+		Scanner scJoueur = new Scanner(System.in);
+		int numJoueur = scJoueur.nextInt();
+		return numJoueur;
+	}
+
+	public Joueur getJoueur(int numJoueur) {
+		return this.listeJoueur.get(numJoueur);
+	}
 }
