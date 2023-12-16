@@ -3,6 +3,12 @@ package fr.utt.karmaka;
 import fr.utt.karmaka.Cartes.*;
 import java.util.*;
 
+/**
+ * Classe Joueur
+ * 
+ * @version 1.0
+ * @since 1.0
+ */
 public class Joueur {
 	private String nom;
 	private int anneauxKarmique;
@@ -13,6 +19,12 @@ public class Joueur {
 	private PilesCartes oeuvres;
 	private EchelleKarmique echelonKarmique;
 	
+	/**
+	 * Constructeur de la classe Joueur
+	 * 
+	 * @param nom
+	 *            nom du joueur
+	 */
 	public Joueur(String nom) {
 		this.setNom(nom);
 		this.pile = new PilesCartes();
@@ -75,6 +87,9 @@ public class Joueur {
 		this.main.supprimerCarte(carte);
 	}
 	
+	/**
+	 * Méthode qui permet de piocher une carte dans la pile
+	 */
 	public void piocher() {
 		if(this.pile.getSize()!=0) {
 			//le joueur pioche une carte dans sa pile
@@ -87,11 +102,26 @@ public class Joueur {
 		
 	}
 	
+	/**
+	 * Méthode qui permet de jouer une carte
+	 * 
+	 * @param carte
+	 *            carte à jouer
+	 * @param rival
+	 *            joueur rival
+	 * @param p
+	 *            partie en cours
+	 */
 	public void jouePouvoir(Carte carte,Joueur rival, Partie p) {
 		carte.jouerPouvoir(this,rival,p);
 		
 	}
 	
+	/**
+	 * Méthode qui permet de choisir une carte à déplacer
+	 * 
+	 * @return carte à déplacer
+	 */
 	public Carte choisirCarteADeplacer() {
 		System.out.println(this.vieFutureToString());
 		System.out.println("Taper le numéro de la carte que vous voulez déplacer :");
@@ -104,6 +134,11 @@ public class Joueur {
 		return c;
 	}
 	
+	/**
+	 * Méthode qui permet de choisir une carte à déplacer
+	 * 
+	 * @return carte à déplacer
+	 */
 	public boolean passer() {
 		boolean passable;
 		if(this.pile.getSize()!=0) {
@@ -116,8 +151,13 @@ public class Joueur {
 		
 	}
 	
+	
 	//on compte les points par couleur, les cartes mosaiques comptes dans toutes les couleurs
 	//le joueur recois les points de sa couleur la plus rentable 
+	/**
+	 * Méthode qui permet de compter les points des oeuvres
+	 * @return points des oeuvres
+	 */
 	public int compterPointsOeuvres() {
 		int[] nbPointsCouleur = {0,0,0};//0 Rouge, 1 Vert, 2 Bleu 
 		for(int i=0; i<this.oeuvres.getSize();i++) {
@@ -149,7 +189,9 @@ public class Joueur {
 		return Arrays.stream(nbPointsCouleur).max().getAsInt();
 	}
 	
-	
+	/**
+	 * Méthode qui permet de rennaitre
+	 */
 	public void rennaissance() {
 		//marquer les points
 		points=compterPointsOeuvres();
@@ -204,6 +246,10 @@ public class Joueur {
 		points=0;
 	}
 
+	/**
+	 * Méthode qui permet de savoir si le joueur a gagné
+	 * @return true si le joueur a gagné, false sinon
+	 */
 	public Boolean aGagner() {
 		if (this.getEchelonKarmique() == EchelleKarmique.TRANSCENDANCE) {
 			return true;

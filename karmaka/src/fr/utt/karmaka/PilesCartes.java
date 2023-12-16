@@ -2,7 +2,9 @@ package fr.utt.karmaka;
 
 import java.util.*;
 
-
+/**
+ * Classe PilesCartes
+ */
 public class PilesCartes {
 	protected ArrayList<Carte> cartes;
 	
@@ -67,6 +69,10 @@ public class PilesCartes {
 		return sb.toString();
 	}
 	
+	/**
+	 * Methode distribuerUneCarte
+	 * @return
+	 */
 	// retire la premiére carte de la pile de cartes 
 	// ajout exception si la pile est vide
 	public Carte distribuerUneCarte(){ 
