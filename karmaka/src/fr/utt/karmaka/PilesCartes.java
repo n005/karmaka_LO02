@@ -21,7 +21,12 @@ public class PilesCartes {
 	}
 
 	public Carte getCarte(int index) {
-		return this.cartes.get(index);
+		try {
+			return this.cartes.get(index);
+		}
+		catch (IndexOutOfBoundsException e) {
+			throw new IndexOutOfBoundsException("La pile est vide");
+		}
 	}
 	
 	public void setCartes(ArrayList<Carte> cartes) {
