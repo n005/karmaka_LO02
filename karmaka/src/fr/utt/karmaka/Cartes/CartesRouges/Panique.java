@@ -13,6 +13,6 @@ public class Panique extends CartesRouges {
 		System.out.println("Vous jouez la carte " + this.getNom());
 		System.out.println("Défaussez la première carte de la Pile d'un joueur. Vous pouvez ensuite jouer une autre carte.");
 		rival.getPile().supprimerCarte(0);
-		p.jouerUnTour(j);
+		p.jouerUneCarte(j);
 	}
 }

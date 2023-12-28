@@ -7,6 +7,14 @@ public class Partie {
 	private Source source;
 	private Fosse fosse;
 
+	public Fosse getFosse() {
+		return fosse;
+	}
+
+	public void setFosse(Fosse fosse) {
+		this.fosse = fosse;
+	}
+
 	public Partie() {
 		this.listeJoueur = new ArrayList<Joueur>();
 		this.source = new Source();
