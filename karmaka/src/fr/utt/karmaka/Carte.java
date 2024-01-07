@@ -1,8 +1,9 @@
 package fr.utt.karmaka;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Carte {
+public class Carte implements Serializable{
 	private int points;
 	private int nbCartes;
 	private String nom;

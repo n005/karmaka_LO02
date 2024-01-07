@@ -1,4 +1,7 @@
 package fr.utt.karmaka;
+
+import java.io.Serializable;
+
 /**
  * Classe principale du jeu
  * 
@@ -6,7 +9,7 @@ package fr.utt.karmaka;
  * @since 1.0
  */
 
-public class Main {
+public class Main implements Serializable{
 	public static void main(String[] args) {
 		Partie partie = new Partie();
 		//Joueur joueur1 = partie.creerJoueur();

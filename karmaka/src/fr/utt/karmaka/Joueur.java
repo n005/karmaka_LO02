@@ -1,6 +1,8 @@
 package fr.utt.karmaka;
 
 import fr.utt.karmaka.Cartes.*;
+
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -9,7 +11,7 @@ import java.util.*;
  * @version 1.0
  * @since 1.0
  */
-public class Joueur {
+public class Joueur implements Serializable{
 	private String nom;
 	private int anneauxKarmique;
 	private int points;

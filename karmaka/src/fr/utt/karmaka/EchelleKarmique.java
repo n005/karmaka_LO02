@@ -1,6 +1,8 @@
 package fr.utt.karmaka;
 
-public enum EchelleKarmique {
+import java.io.Serializable;
+
+public enum EchelleKarmique implements Serializable{
 	BOUSIER,
 	SERPENT,
 	LOUP,

@@ -1,8 +1,18 @@
 package fr.utt.karmaka;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.*;
 
-public class Partie {
+/**
+ * Classe partie du jeu
+ * 
+ * @version 1.0
+ * @since 1.0
+ */
+public class Partie implements Serializable{
 	private ArrayList<Joueur> listeJoueur;
 	private Source source;
 	private Fosse fosse;
@@ -243,5 +253,20 @@ public class Partie {
 
 	public Joueur getJoueur(int numJoueur) {
 		return this.listeJoueur.get(numJoueur);
+	}
+
+	// Méthode pour sauvagarder la partie
+	public void sauvegarder() {
+		try{
+			FileOutputStream file = new FileOutputStream("partie.ser");
+			ObjectOutputStream out = new ObjectOutputStream(file);
+			out.writeObject(this);
+			out.close();
+			file.close();
+			System.out.println("Partie sauvegardée");
+		}
+		catch(IOException e){
+			System.out.println("Erreur lors de la sauvegarde");
+		}	
 	}
 }

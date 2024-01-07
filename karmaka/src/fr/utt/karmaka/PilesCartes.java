@@ -1,11 +1,12 @@
 package fr.utt.karmaka;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * Classe PilesCartes
  */
-public class PilesCartes {
+public class PilesCartes implements Serializable{
 	protected ArrayList<Carte> cartes;
 	
 	public PilesCartes() {
