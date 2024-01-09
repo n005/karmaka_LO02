@@ -5,7 +5,7 @@ package fr.utt.karmaka;
  * @version 1.0
  * @since 1.0
  */
-public class Aleatoire implements Strategie {
+public class Aleatoire implements Strategie, java.io.Serializable{
 	public void jouer(Joueur joueur) {
 		joueur.piocher();
 		int numCarte = 0; 
