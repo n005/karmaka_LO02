@@ -284,6 +284,10 @@ public class Partie implements Serializable {
 				|| (joueurO.aGagner())) {
 			this.jouerUnTour(joueurH);
 			// faire jouer le bot
+			if (joueurO.getPile().getSize() == 0 && joueurO.getMain().getSize() == 0) {
+				this.rennaitre(joueurO);
+			}
+			joueurO.jouerBot();
 		}
 		if (joueurH.aGagner()) {
 			System.out.println("Le joueur " + joueurH.getNom() + " a gagné !");
