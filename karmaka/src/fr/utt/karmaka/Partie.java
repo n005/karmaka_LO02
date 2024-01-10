@@ -271,7 +271,23 @@ public class Partie implements Serializable {
 		if (this.listeJoueur.size() != 2) {
 			joueurH = this.creerJoueur();
 			this.ajouterUnJoueur(joueurH);
-			joueurO = new JoueurVirtuel("Ordinateur");
+			Scanner scChoixStrategie = new Scanner(System.in);
+			System.out.println("Taper 1 pour Aléatoire, 2 pour la défensif, 3 pour Agressif");
+			int choixStrategie = scChoixStrategie.nextInt();
+			switch (choixStrategie) {
+				case 1:
+					joueurO = new JoueurVirtuel("Ordinateur",new Aleatoire());
+					break;
+				case 2:
+					joueurO = new JoueurVirtuel("Ordinateur", new Defensif());
+					break;
+				case 3:
+					joueurO = new JoueurVirtuel("Ordinateur", new Agressif());
+					break;
+				default:
+					joueurO = new JoueurVirtuel("Ordinateur", new Aleatoire());
+					break;
+			}
 			this.ajouterUnJoueur(joueurO);
 			// distribution des cartes
 			this.DonnerCarteMiseEnPlace(joueurH, joueurO);
