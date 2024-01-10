@@ -77,13 +77,9 @@ public class Joueur implements Serializable{
 		this.points = points;
 	}
 
-	public void ajouterPoints(int points) {
-		this.points += points;
-	}
 
 	public void jouerPoints(int indexCarte) {
 		Carte carte = this.main.getCarte(indexCarte);
-		ajouterPoints(carte.getPoints());
 		this.oeuvres.ajouterCarte(carte);
 		this.main.supprimerCarte(carte);
 	}
