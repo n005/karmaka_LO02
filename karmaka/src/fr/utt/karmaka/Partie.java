@@ -276,16 +276,16 @@ public class Partie implements Serializable {
 			int choixStrategie = scChoixStrategie.nextInt();
 			switch (choixStrategie) {
 				case 1:
-					joueurO = new JoueurVirtuel("Ordinateur",new Aleatoire());
+					joueurO = new JoueurVirtuel("Ordinateur",new Aleatoire(),this);
 					break;
 				case 2:
-					joueurO = new JoueurVirtuel("Ordinateur", new Defensif());
+					joueurO = new JoueurVirtuel("Ordinateur", new Defensif(),this);
 					break;
 				case 3:
-					joueurO = new JoueurVirtuel("Ordinateur", new Agressif());
+					joueurO = new JoueurVirtuel("Ordinateur", new Agressif(),this);
 					break;
 				default:
-					joueurO = new JoueurVirtuel("Ordinateur", new Aleatoire());
+					joueurO = new JoueurVirtuel("Ordinateur", new Aleatoire(),this);
 					break;
 			}
 			this.ajouterUnJoueur(joueurO);

@@ -13,8 +13,8 @@ public class Main implements Serializable{
 	public static void main(String[] args) {
 		Partie partie = new Partie();
 		//Joueur joueur1 = partie.creerJoueur();
-		JoueurVirtuel joueurVirtuel1 = new JoueurVirtuel("joueurvirtuel", new Agressif());
-		JoueurVirtuel joueurVirtuel2 = new JoueurVirtuel("joueurvirtuel2",new Agressif());
+		JoueurVirtuel joueurVirtuel1 = new JoueurVirtuel("joueurvirtuel", new Agressif(),partie);
+		JoueurVirtuel joueurVirtuel2 = new JoueurVirtuel("joueurvirtuel2",new Agressif(),partie);
 		
 		partie.ajouterUnJoueur(joueurVirtuel1);
 		//partie.ajouterUnJoueur(joueur1);

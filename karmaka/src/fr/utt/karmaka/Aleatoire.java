@@ -1,6 +1,6 @@
 package fr.utt.karmaka;
-import java.util.Random;
 
+import java.util.Random;
 
 /**
  * Classe aleatoire du jeu
@@ -8,8 +8,8 @@ import java.util.Random;
  * @version 1.0
  * @since 1.0
  */
-public class Aleatoire implements Strategie, java.io.Serializable{
-	public void jouer(Joueur joueur) {
+public class Aleatoire implements Strategie, java.io.Serializable {
+	public void jouer(Joueur joueur, Partie p) {
 		joueur.piocher();
 		Random numAleatoire = new Random();
 		int choix = numAleatoire.nextInt(4);
@@ -27,7 +27,7 @@ public class Aleatoire implements Strategie, java.io.Serializable{
 		// jouer le pouvoir
 		case 2:
 			System.out.println("joue pouvoir");
-			// joueur.jouePouvoir(null, joueur, null);
+			joueur.jouePouvoir(joueur.getMain().getCarte(numAleatoire.nextInt(joueur.getMain().getSize())), joueur, p);
 			break;
 		// passer le tour
 		case 3:
@@ -36,7 +36,7 @@ public class Aleatoire implements Strategie, java.io.Serializable{
 				System.out.println("passe");
 				break;
 			} else {
-				this.jouer(joueur);
+				this.jouer(joueur, p);
 				break;
 			}
 		default:

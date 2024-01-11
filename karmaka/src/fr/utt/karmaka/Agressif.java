@@ -9,7 +9,7 @@ import java.util.Random;
  * @since 1.0
  */
 public class Agressif implements Strategie {
-	public void jouer(Joueur joueur) {
+	public void jouer(Joueur joueur, Partie p) {
 		joueur.piocher();
 		Random numAleatoire = new Random();
 		int choix = numAleatoire.nextInt(100);
@@ -24,13 +24,13 @@ public class Agressif implements Strategie {
 		} else if (choix > 55 && choix <= 85) {
 			// jouer le pouvoir
 			System.out.println("joue pouvoir");
-			//joueur.jouePouvoir(numAleatoire.nextInt(joueur.getMain().getSize()), joueur, null);
+			joueur.jouePouvoir(joueur.getMain().getCarte(numAleatoire.nextInt(joueur.getMain().getSize())), joueur, p);
 		} else {
 			boolean passable = joueur.passer();
 			if (passable) {
 				System.out.println("passe");
 			} else {
-				this.jouer(joueur);
+				this.jouer(joueur, p);
 			}
 		}
 	}
