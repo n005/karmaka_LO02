@@ -14,7 +14,7 @@ public class Main implements Serializable{
 		Partie partie = new Partie();
 		//Joueur joueur1 = partie.creerJoueur();
 		JoueurVirtuel joueurVirtuel1 = new JoueurVirtuel("joueurvirtuel", new Agressif());
-		JoueurVirtuel joueurVirtuel2 = new JoueurVirtuel("joueurvirtuel2",new Defensif());
+		JoueurVirtuel joueurVirtuel2 = new JoueurVirtuel("joueurvirtuel2",new Agressif());
 		
 		partie.ajouterUnJoueur(joueurVirtuel1);
 		//partie.ajouterUnJoueur(joueur1);

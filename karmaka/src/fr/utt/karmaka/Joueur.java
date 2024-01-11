@@ -41,7 +41,7 @@ public class Joueur implements Serializable{
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("\n ******************************************* \n");		
-		sb.append(this.nom +" est à l'echellon "+this.echelonKarmique + ", a  " +  this.points + " points et "+ this.anneauxKarmique +" anneaux Karmiques\n");
+		sb.append(this.nom +" est à l'echellon "+this.echelonKarmique + " et "+ this.anneauxKarmique +" anneaux Karmiques\n");
 		//La pile ne doit pas être devoilée quand on joue
 		sb.append("Pile : \n"+this.pile+"\n");
 		sb.append("Vie Future : \n"+this.vieFuture+"\n");

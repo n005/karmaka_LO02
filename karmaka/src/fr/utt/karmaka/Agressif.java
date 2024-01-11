@@ -24,7 +24,7 @@ public class Agressif implements Strategie {
 		} else if (choix > 55 && choix <= 85) {
 			// jouer le pouvoir
 			System.out.println("joue pouvoir");
-			// joueur.jouePouvoir(null, joueur, null);
+			//joueur.jouePouvoir(numAleatoire.nextInt(joueur.getMain().getSize()), joueur, null);
 		} else {
 			boolean passable = joueur.passer();
 			if (passable) {
