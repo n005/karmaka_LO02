@@ -78,6 +78,7 @@ public class Partie implements Serializable {
 			c = source.distribuerUneCarte();
 			j.ajouterPile(c);
 		}
+		System.out.println(j.getNom() + " se réincarne.");
 	}
 
 	public void DonnerCarteMiseEnPlace(Joueur... joueurs) {
@@ -110,7 +111,23 @@ public class Partie implements Serializable {
 		System.out.println(j.mainToString());
 		System.out.println("Taper le numéro de la carte que vous voulez jouer :");
 		Scanner scCarte = new Scanner(System.in);
-		int numCarte = scCarte.nextInt();
+		int numCarte;
+		while (true) {
+			try {
+				numCarte = scCarte.nextInt();
+				if (numCarte >= 0 && numCarte <= j.getMain().getSize())
+					break;
+				else {
+					System.out.println("Entrée incorrecte !");
+					System.out.println("Taper le numéro de la carte que vous voulez jouer :");		
+					scCarte.nextLine();
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Entrée incorrecte !");
+				System.out.println("Taper le numéro de la carte que vous voulez jouer :");
+				scCarte.nextLine();
+			}
+		}
 		return numCarte;
 	}
 
@@ -125,68 +142,89 @@ public class Partie implements Serializable {
 		Scanner scChoix = new Scanner(System.in);
 		System.out.println(
 				"Taper 1 pour jouer une carte pour ses points, 2 pour son pouvoir, 3 pour votre futur, 4 pour passer");
-		int choix = scChoix.nextInt();
-		switch (choix) {
-			case 1: {
-				int numCarte = this.choisirCarteAJouer(j);
-				j.jouerPoints(numCarte);
-				break;
-			}
-			case 2: {
-				int numCarte = this.choisirCarteAJouer(j);
-				// appeler le bon pouvoir de la carte
-				Carte carte = j.getMain().getCarte(numCarte);
-				j.jouePouvoir(carte, this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)), this);
-				// proposer à l'autre joueur de recup la carte
-				System.out.println("Le joueur " + this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)).getNom()
-						+ " doit faire un choix  :");
-				Scanner scChoixRecupCarte = new Scanner(System.in);
-				System.out.println("Taper 1 pour Récuperer la carte qui vient d'être jouée, 2 pour la défausser");
-				int choixRecupCarte = scChoixRecupCarte.nextInt();
-				switch (choixRecupCarte) {
-					case 1:
-						this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)).ajouterVieFuture(carte);
-						;
-						break;
-					case 2:
-						this.fosse.ajouterCarte(carte);
-						break;
-					default:
-						break;
-				}
-				PilesCartes cartesMain = j.getMain();
-				cartesMain.supprimerCarte(numCarte);
-				j.setMain(cartesMain);
-				break;
+		int choix;
 
-			}
-
-			case 3: {
-				int numCarte = this.choisirCarteAJouer(j);
-				j.jouerFuture(numCarte);
-				break;
-
-			}
-			case 4: {
-				boolean passable = j.passer();
-				if (passable) {
-					System.out.println("Vous passez votre tour.");
+		while (true) {
+			try {
+				choix = scChoix.nextInt();
+				if (choix >= 1 && choix <= 3)
 					break;
-				} else {
-					System.out.println("Vous ne pouvez pas passer votre tour car votre pile est vide");
-					// reproposer le choix
+				else {
+					System.out.println("Entrée incorrecte !");
+					System.out.println(
+							"Taper 1 pour jouer une carte pour ses points, 2 pour son pouvoir, 3 pour votre futur, 4 pour passer");
+					scChoix.nextLine();
 				}
-
+			} catch (InputMismatchException e) {
+				System.out.println("Entrée incorrecte !");
+				System.out.println(
+						
+						"Taper 1 pour jouer une carte pour ses points, 2 pour son pouvoir, 3 pour votre futur, 4 pour passer");
+				scChoix.nextLine();
 			}
-			default:
-				System.out.println("choix incorect");
+		}
+
+		switch (choix) {
+		case 1: {
+			int numCarte = this.choisirCarteAJouer(j);
+			j.jouerPoints(numCarte);
+			break;
+		}
+		case 2: {
+			int numCarte = this.choisirCarteAJouer(j);
+			// appeler le bon pouvoir de la carte
+			Carte carte = j.getMain().getCarte(numCarte);
+			j.jouePouvoir(carte, this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)), this);
+			// proposer à l'autre joueur de recup la carte
+			System.out.println("Le joueur " + this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)).getNom()
+					+ " doit faire un choix  :");
+			Scanner scChoixRecupCarte = new Scanner(System.in);
+			System.out.println("Taper 1 pour Récuperer la carte qui vient d'être jouée, 2 pour la défausser");
+			int choixRecupCarte = scChoixRecupCarte.nextInt();
+			switch (choixRecupCarte) {
+			case 1:
+				this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)).ajouterVieFuture(carte);
+				;
 				break;
+			case 2:
+				this.fosse.ajouterCarte(carte);
+				break;
+			default:
+				break;
+			}
+			PilesCartes cartesMain = j.getMain();
+			cartesMain.supprimerCarte(numCarte);
+			j.setMain(cartesMain);
+			break;
+
+		}
+
+		case 3: {
+			int numCarte = this.choisirCarteAJouer(j);
+			j.jouerFuture(numCarte);
+			break;
+
+		}
+		case 4: {
+			boolean passable = j.passer();
+			if (passable) {
+				System.out.println("Vous passez votre tour.");
+				break;
+			} else {
+				System.out.println("Vous ne pouvez pas passer votre tour car votre pile est vide");
+				// reproposer le choix
+			}
+
+		}
+		default:
+			System.out.println("choix incorect");
+			break;
 		}
 	}
 
 	/**
-	 * Permet de choisir de sauvegarder la partie ou non.
-	 * Puis, la méthode lance le tour du joueur.
+	 * Permet de choisir de sauvegarder la partie ou non. Puis, la méthode lance le
+	 * tour du joueur.
 	 * 
 	 * @param j : joueur en cours
 	 */
@@ -228,8 +266,8 @@ public class Partie implements Serializable {
 	}
 
 	/**
-	 * Lancement d'une partie à deux joueur.
-	 * A chaque tour, la méthode vérifie si il y a un vainqueur.
+	 * Lancement d'une partie à deux joueur. A chaque tour, la méthode vérifie si il
+	 * y a un vainqueur.
 	 */
 	public void jeuDeuxJoueurs() {
 		setEstContreOrdinateur(false);
@@ -247,8 +285,7 @@ public class Partie implements Serializable {
 			joueur1 = this.listeJoueur.get(0);
 			joueur2 = this.listeJoueur.get(1);
 		}
-		while (!(joueur1.aGagner())
-				|| (joueur1.aGagner())) {
+		while (!(joueur1.aGagner()) || (joueur1.aGagner())) {
 			this.jouerUnTour(joueur1);
 			this.jouerUnTour(joueur2);
 		}
@@ -261,8 +298,8 @@ public class Partie implements Serializable {
 	}
 
 	/**
-	 * Lancement d'une partie contre l'ordinateur.
-	 * A chaque tour, la méthode vérifie si il y a un vainqueur.
+	 * Lancement d'une partie contre l'ordinateur. A chaque tour, la méthode vérifie
+	 * si il y a un vainqueur.
 	 */
 	public void jeuOrdinateur() {
 		setEstContreOrdinateur(true);
@@ -272,32 +309,50 @@ public class Partie implements Serializable {
 			joueurH = this.creerJoueur();
 			this.ajouterUnJoueur(joueurH);
 			Scanner scChoixStrategie = new Scanner(System.in);
-			System.out.println("Taper 1 pour Aléatoire, 2 pour la défensif, 3 pour Agressif");
-			int choixStrategie = scChoixStrategie.nextInt();
+			System.out.println(
+					"Taper 1 pour que l'ordinateur soit en mode Aléatoire, 2 pour défensif, 3 pour Agressif :");
+			int choixStrategie = 0;
+			while (true) {
+				try {
+					choixStrategie = scChoixStrategie.nextInt();
+					if (choixStrategie >= 1 && choixStrategie <= 3)
+						break;
+					else {
+						System.out.println("Entrée incorrecte !");
+						System.out.println(
+								"Taper 1 pour que l'ordinateur soit en mode Aléatoire, 2 pour défensif, 3 pour Agressif :");
+						scChoixStrategie.nextLine();
+					}
+				} catch (InputMismatchException e) {
+					System.out.println("Entrée incorrecte !");
+					System.out.println(
+							"Taper 1 pour que l'ordinateur soit en mode Aléatoire, 2 pour défensif, 3 pour Agressif :");
+					scChoixStrategie.nextLine();
+				}
+			}
+
 			switch (choixStrategie) {
-				case 1:
-					joueurO = new JoueurVirtuel("Ordinateur",new Aleatoire(),this);
-					break;
-				case 2:
-					joueurO = new JoueurVirtuel("Ordinateur", new Defensif(),this);
-					break;
-				case 3:
-					joueurO = new JoueurVirtuel("Ordinateur", new Agressif(),this);
-					break;
-				default:
-					joueurO = new JoueurVirtuel("Ordinateur", new Aleatoire(),this);
-					break;
+			case 1:
+				joueurO = new JoueurVirtuel("L'ordinateur", new Aleatoire(), this);
+				break;
+			case 2:
+				joueurO = new JoueurVirtuel("L'ordinateur", new Defensif(), this);
+				break;
+			case 3:
+				joueurO = new JoueurVirtuel("L'ordinateur", new Agressif(), this);
+				break;
+			default:
+				joueurO = new JoueurVirtuel("L'ordinateur", new Aleatoire(), this);
+				break;
 			}
 			this.ajouterUnJoueur(joueurO);
 			// distribution des cartes
 			this.DonnerCarteMiseEnPlace(joueurH, joueurO);
-		}
-		else {
+		} else {
 			joueurH = this.listeJoueur.get(0);
 			joueurO = (JoueurVirtuel) this.listeJoueur.get(1);
 		}
-		while (!(joueurH.aGagner())
-				|| (joueurO.aGagner())) {
+		while (!(joueurH.aGagner()) || (joueurO.aGagner())) {
 			this.jouerUnTour(joueurH);
 			// faire jouer le bot
 			if (joueurO.getPile().getSize() == 0 && joueurO.getMain().getSize() == 0) {
@@ -315,8 +370,8 @@ public class Partie implements Serializable {
 
 	/**
 	 * Lancement de l'application, permet de choisir entre le démarage d'une partie
-	 * à deux joueurs ou contre l'ordinateur.
-	 * Offre aussi la possibilité de charger une partie sauvegardée.
+	 * à deux joueurs ou contre l'ordinateur. Offre aussi la possibilité de charger
+	 * une partie sauvegardée.
 	 * 
 	 * @param args
 	 */
@@ -332,29 +387,47 @@ public class Partie implements Serializable {
 		Scanner scChoix = new Scanner(System.in);
 		System.out.println(
 				"Taper 1 pour jouer contre l'ordinateur ou 2 pour jouer avec quelqu'un, 3 pour charger une partie sauvegardée :");
-		int choix = scChoix.nextInt();
-		System.out.println("Vous avez saisi : " + choix);
+
+		int choix = 0;
+		while (true) {
+			try {
+				choix = scChoix.nextInt();
+				if (choix >= 1 && choix <= 3)
+					break;
+				else {
+					System.out.println("Entrée incorrecte !");
+					System.out.println(
+							"Taper 1 pour jouer contre l'ordinateur ou 2 pour jouer avec quelqu'un, 3 pour charger une partie sauvegardée :");
+					scChoix.nextLine();
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Entrée incorrecte !");
+				System.out.println(
+						"Taper 1 pour jouer contre l'ordinateur ou 2 pour jouer avec quelqu'un, 3 pour charger une partie sauvegardée :");
+				scChoix.nextLine();
+			}
+		}
 
 		switch (choix) {
-			case 1: {
-				System.out.println("Démarage d'une partie contre l'ordinateur");
-				karmaka.jeuOrdinateur();
-				break;
-			}
-			case 2: {
-				System.out.println("Démarage d'une partie à deux joueur");
-				karmaka.jeuDeuxJoueurs();
-				break;
+		case 1: {
+			System.out.println("Démarage d'une partie contre l'ordinateur");
+			karmaka.jeuOrdinateur();
+			break;
+		}
+		case 2: {
+			System.out.println("Démarage d'une partie à deux joueur");
+			karmaka.jeuDeuxJoueurs();
+			break;
 
-			}
-			case 3: {
-				System.out.println("Chargement de la partie sauvegardée...");
-				karmaka.chargerPartie();
-				break;
-			}
-			default:
-				System.out.println("choix incorect");
-				break;
+		}
+		case 3: {
+			System.out.println("Chargement de la partie sauvegardée...");
+			karmaka.chargerPartie();
+			break;
+		}
+		default:
+			System.out.println("choix incorect");
+			break;
 		}
 
 		/*
