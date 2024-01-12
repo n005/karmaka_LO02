@@ -37,7 +37,9 @@ public class Joueur implements Serializable{
 		
 	}
 	
-
+	/**
+	 * Affiche les informations d'un joueur.
+	 */
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("\n ******************************************* \n");		
@@ -50,7 +52,10 @@ public class Joueur implements Serializable{
 		sb.append("\n ******************************************* \n");
 		return sb.toString();
 	}
-	
+	/**
+	 * Construit une chaine de caractère représentant la main du joueur.
+	 * @return 
+	 */
 	public String mainToString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("Main :\n");
@@ -60,6 +65,10 @@ public class Joueur implements Serializable{
 		return sb.toString();
 	}
 	
+	/**
+	 * Construit une chaine de caractère représentant la vie future du joueur.
+	 * @return
+	 */
 	public String vieFutureToString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("Votre vie future :\n");
@@ -77,13 +86,19 @@ public class Joueur implements Serializable{
 		this.points = points;
 	}
 
-
+	/**
+	 * Déplace la carte de la main vers les oeuvres du joueur.
+	 * @param indexCarte position de la carte à jouer dans la main du joueur
+	 */
 	public void jouerPoints(int indexCarte) {
 		Carte carte = this.main.getCarte(indexCarte);
 		this.oeuvres.ajouterCarte(carte);
 		this.main.supprimerCarte(carte);
 	}
-	
+	/**
+	 * Déplace la carte de la main vers la vie futures du joueur.
+	 * @param indexCarte position de la carte à jouer dans la main du joueur
+	 */
 	public void jouerFuture(int indexCarte) {
 		Carte carte = this.main.getCarte(indexCarte);
 		this.vieFuture.ajouterCarte(carte);
@@ -91,7 +106,7 @@ public class Joueur implements Serializable{
 	}
 	
 	/**
-	 * Méthode qui permet de piocher une carte dans la pile
+	 * Méthode qui permet de piocher une carte dans la pile, pour ensuite la mettre dans la main du joueur.
 	 */
 	public void piocher() {
 		if(this.pile.getSize()!=0) {
@@ -106,7 +121,8 @@ public class Joueur implements Serializable{
 	}
 	
 	/**
-	 * Méthode qui permet de jouer une carte pour son pouvoir
+	 * Méthode qui permet de jouer une carte pour son pouvoir.
+	 * Appel la méthode jouerPouvoir de la carte passée en paramètre.
 	 * 
 	 * @param carte
 	 *            carte à jouer
@@ -137,6 +153,10 @@ public class Joueur implements Serializable{
 		return c;
 	}
 	
+	/**
+	 * Méthode qui permet de savoir si un joueur à le droit de passer son tour. (si sa pile n'est pas vide)
+	 * @return passable
+	 */
 	public boolean passer() {
 		boolean passable;
 		if(this.pile.getSize()!=0) {
@@ -150,10 +170,11 @@ public class Joueur implements Serializable{
 	}
 	
 	
-	//on compte les points par couleur, les cartes mosaiques comptes dans toutes les couleurs
-	//le joueur recois les points de sa couleur la plus rentable 
+	
 	/**
-	 * Méthode qui permet de compter les points des oeuvres
+	 * Méthode qui permet de compter les points des oeuvres.
+	 * On compte les points par couleur, les cartes mosaiques comptes dans toutes les couleurs.
+	 * Le joueur reçois les points de sa couleur la plus rentable. 
 	 * @return points des oeuvres
 	 */
 	public int compterPointsOeuvres() {
@@ -281,6 +302,10 @@ public class Joueur implements Serializable{
 		this.pile = pile;
 	}
 
+	/**
+	 * Permet d'ajouter une carte sur la pile du joueur.
+	 * @param carte à ajouter
+	 */
 	public void ajouterPile(Carte carte) {
 		this.pile.ajouterCarte(carte);
 	}
@@ -301,6 +326,10 @@ public class Joueur implements Serializable{
 		this.main = main;
 	}
 	
+	/**
+	 * Permet d'ajouter une carte dans la main du joueur.
+	 * @param carte à ajouter
+	 */
 	public void ajouterMain(Carte carte) {
 		this.main.ajouterCarte(carte);
 	}
@@ -312,7 +341,10 @@ public class Joueur implements Serializable{
 	public void setOeuvres(PilesCartes oeuvres) {
 		this.oeuvres = oeuvres;
 	}
-
+	
+	/**
+	 * Permet de supprimer les oeuvres du joueur.
+	 */
 	public void viderOeuvres() {
 		this.oeuvres.viderPile();
 	}
@@ -325,6 +357,10 @@ public class Joueur implements Serializable{
 		this.echelonKarmique = echelonKarmique;
 	}
 
+	/**
+	 * Permet d'ajouter une carte dans la vie future du joueur.
+	 * @param carte à ajouter
+	 */
 	public void ajouterVieFuture(Carte carte) {
 		this.vieFuture.ajouterCarte(carte);
 		

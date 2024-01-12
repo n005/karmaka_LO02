@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * Classe partie du jeu
+ * Classe principale du jeu. Permet de jouer à Karmaka contre à deux joueurs ou bien seul contre l'ordinateur.
  * 
  * @version 1.0
  * @since 1.0
@@ -57,6 +57,10 @@ public class Partie implements Serializable {
 	}
 
 	// ajout d'un joueur à la liste des joueurs
+	/**
+	 * Permet d'ajouter un joueur dans la partie.
+	 * @param joueur à ajouter dans la partie
+	 */
 	public void ajouterUnJoueur(Joueur joueur) {
 		this.listeJoueur.add(joueur);
 	}
@@ -81,6 +85,10 @@ public class Partie implements Serializable {
 		System.out.println(j.getNom() + " se réincarne.");
 	}
 
+	/**
+	 * Permet de distribuer les cartes au début de la partie.
+	 * @param joueurs aux quels il faut donner des cartes
+	 */
 	public void DonnerCarteMiseEnPlace(Joueur... joueurs) {
 		source.melanger();
 		// main de départ
@@ -99,6 +107,10 @@ public class Partie implements Serializable {
 		}
 	}
 
+	/**
+	 * Permet de créer un nouveau joueur en demandant le nom à l'utilisateur.
+	 * @return j le joueur créé
+	 */
 	public Joueur creerJoueur() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Saisiser le nom du joueur :");
@@ -107,6 +119,11 @@ public class Partie implements Serializable {
 		return j;
 	}
 
+	/**
+	 * Permet au joueur de choisir le numéro de la carte qu'il souhaite jouer.
+	 * @param j le joueur qui doit jouer
+	 * @return numCarte le numéro de la carte choisi par le joueur
+	 */
 	public int choisirCarteAJouer(Joueur j) {
 		System.out.println(j.mainToString());
 		System.out.println("Taper le numéro de la carte que vous voulez jouer :");

@@ -3,7 +3,8 @@ package fr.utt.karmaka;
 import java.io.Serializable;
 
 /**
- * Classe principale du jeu
+ * Classe de test du jeu.
+ * Permet à deux ordinateurs de s'affronter.
  * 
  * @version 1.0
  * @since 1.0

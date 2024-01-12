@@ -2,7 +2,9 @@ package fr.utt.karmaka;
 
 import java.io.Serializable;
 import java.util.Scanner;
-
+/**
+ * Classe représentant une carte.
+ */
 public class Carte implements Serializable{
 	private int points;
 	private int nbCartes;
@@ -16,20 +18,34 @@ public class Carte implements Serializable{
 	public void setCouleur(String couleur) {
 		this.couleur = couleur;
 	}
-
+	/**
+	 * Constructeur de la carte.
+	 * @param points
+	 * @param nbCartes
+	 * @param nom
+	 * @param couleur
+	 */
 	public Carte(int points, int nbCartes, String nom, String couleur) {
 		this.setPoints(points);
 		this.setNbCartes(nbCartes);
 		this.setNom(nom);
 		this.setCouleur(couleur);
 	}
-
+	/**
+	 * Construit une chaîne de caractère contenant les informations de la carte.
+	 */
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append(nom + "(" + points + " points, " + nbCartes + " cartes dans le paquet)" + "\n");
 		return sb.toString();
 	}
 
+	/**
+	 * Permet d'utiliser le pouvoir de la carte.
+	 * @param joueur
+	 * @param rival
+	 * @param p
+	 */
 	public void jouerPouvoir(Joueur joueur, Joueur rival, Partie p) {
 
 	}

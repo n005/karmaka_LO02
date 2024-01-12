@@ -9,6 +9,10 @@ import java.util.Random;
  * @since 1.0
  */
 public class Agressif implements Strategie {
+	/**
+	 * @param joueur 
+	 * @param partie
+	 */
 	public void jouer(Joueur joueur, Partie p) {
 		joueur.piocher();
 		Random numAleatoire = new Random();
