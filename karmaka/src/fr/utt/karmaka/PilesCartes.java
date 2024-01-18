@@ -116,7 +116,6 @@ public class PilesCartes implements Serializable {
 	 * @return
 	 */
 	// retire la premiére carte de la pile de cartes
-	// ajout exception si la pile est vide
 	public Carte distribuerUneCarte() {
 		Carte c;
 		// on retire la carte du dessus de la pile de cartes

@@ -6,6 +6,9 @@ import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 import fr.utt.karmaka.PilesCartes;
 
+/**
+ * Class Fournaise
+ */
 public class Fournaise extends CartesRouges {
 
 	public Fournaise() {

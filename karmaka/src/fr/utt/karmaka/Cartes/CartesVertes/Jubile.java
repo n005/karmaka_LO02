@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Jubile
+ */
 public class Jubile extends CartesVertes {
 	public Jubile() {
 		super(3, 2, "Jubilé");
@@ -27,8 +30,7 @@ public class Jubile extends CartesVertes {
 			j.getOeuvres().ajouterCarte(j.getMain().getCarte(numCarte));
 			j.getMain().supprimerCarte(numCarte);
 
-		}
-		else {
+		} else {
 			if (j.getMain().getSize() > 0) {
 				int numCarte = (int) (Math.random() * j.getMain().getSize());
 				j.getOeuvres().ajouterCarte(j.getMain().getCarte(numCarte));

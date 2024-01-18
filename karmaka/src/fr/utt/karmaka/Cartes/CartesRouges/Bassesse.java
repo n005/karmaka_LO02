@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Bassesse
+ */
 public class Bassesse extends CartesRouges {
 	public Bassesse() {
 		super(3, 2, "Bassesse");

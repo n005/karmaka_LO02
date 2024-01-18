@@ -5,6 +5,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Transmigration
+ */
 public class Transmigration extends CartesBleues {
 	public Transmigration() {
 		super(1, 3, "Transmigration");

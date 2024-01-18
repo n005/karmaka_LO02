@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Voyage
+ */
 public class Voyage extends CartesVertes {
 	public Voyage() {
 		super(3, 2, "Voyage");
@@ -22,8 +25,7 @@ public class Voyage extends CartesVertes {
 				System.out.println(i + " : " + j.getMain().getCarte(i).getNom());
 			}
 			p.jouerUneCarte(j);
-		}
-		else {
+		} else {
 			j.piocher();
 			j.piocher();
 			j.piocher();

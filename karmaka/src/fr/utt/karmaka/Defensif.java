@@ -1,7 +1,12 @@
 package fr.utt.karmaka;
 
 import java.util.Random;
-
+/**
+ * Classe defensif du jeu
+ * 
+ * @version 1.0
+ * @since 1.0
+ */
 public class Defensif implements Strategie {
 	public void jouer(Joueur joueur, Partie p) {
 		joueur.piocher();

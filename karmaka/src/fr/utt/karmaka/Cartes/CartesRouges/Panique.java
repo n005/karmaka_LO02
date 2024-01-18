@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Panique
+ */
 public class Panique extends CartesRouges {
 	public Panique() {
 		super(1, 3, "Panique");

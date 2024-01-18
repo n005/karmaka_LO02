@@ -9,7 +9,8 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * Classe principale du jeu. Permet de jouer à Karmaka contre à deux joueurs ou bien seul contre l'ordinateur.
+ * Classe principale du jeu. Permet de jouer à Karmaka contre à deux joueurs ou
+ * bien seul contre l'ordinateur.
  * 
  * @version 1.0
  * @since 1.0
@@ -59,6 +60,7 @@ public class Partie implements Serializable {
 	// ajout d'un joueur à la liste des joueurs
 	/**
 	 * Permet d'ajouter un joueur dans la partie.
+	 * 
 	 * @param joueur à ajouter dans la partie
 	 */
 	public void ajouterUnJoueur(Joueur joueur) {
@@ -87,6 +89,7 @@ public class Partie implements Serializable {
 
 	/**
 	 * Permet de distribuer les cartes au début de la partie.
+	 * 
 	 * @param joueurs aux quels il faut donner des cartes
 	 */
 	public void DonnerCarteMiseEnPlace(Joueur... joueurs) {
@@ -109,6 +112,7 @@ public class Partie implements Serializable {
 
 	/**
 	 * Permet de créer un nouveau joueur en demandant le nom à l'utilisateur.
+	 * 
 	 * @return j le joueur créé
 	 */
 	public Joueur creerJoueur() {
@@ -121,6 +125,7 @@ public class Partie implements Serializable {
 
 	/**
 	 * Permet au joueur de choisir le numéro de la carte qu'il souhaite jouer.
+	 * 
 	 * @param j le joueur qui doit jouer
 	 * @return numCarte le numéro de la carte choisi par le joueur
 	 */
@@ -136,7 +141,7 @@ public class Partie implements Serializable {
 					break;
 				else {
 					System.out.println("Entrée incorrecte !");
-					System.out.println("Taper le numéro de la carte que vous voulez jouer :");		
+					System.out.println("Taper le numéro de la carte que vous voulez jouer :");
 					scCarte.nextLine();
 				}
 			} catch (InputMismatchException e) {
@@ -175,67 +180,67 @@ public class Partie implements Serializable {
 			} catch (InputMismatchException e) {
 				System.out.println("Entrée incorrecte !");
 				System.out.println(
-						
+
 						"Taper 1 pour jouer une carte pour ses points, 2 pour son pouvoir, 3 pour votre futur, 4 pour passer");
 				scChoix.nextLine();
 			}
 		}
 
 		switch (choix) {
-		case 1: {
-			int numCarte = this.choisirCarteAJouer(j);
-			j.jouerPoints(numCarte);
-			break;
-		}
-		case 2: {
-			int numCarte = this.choisirCarteAJouer(j);
-			// appeler le bon pouvoir de la carte
-			Carte carte = j.getMain().getCarte(numCarte);
-			j.jouePouvoir(carte, this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)), this);
-			// proposer à l'autre joueur de recup la carte
-			System.out.println("Le joueur " + this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)).getNom()
-					+ " doit faire un choix  :");
-			Scanner scChoixRecupCarte = new Scanner(System.in);
-			System.out.println("Taper 1 pour Récuperer la carte qui vient d'être jouée, 2 pour la défausser");
-			int choixRecupCarte = scChoixRecupCarte.nextInt();
-			switch (choixRecupCarte) {
-			case 1:
-				this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)).ajouterVieFuture(carte);
-				;
+			case 1: {
+				int numCarte = this.choisirCarteAJouer(j);
+				j.jouerPoints(numCarte);
 				break;
-			case 2:
-				this.fosse.ajouterCarte(carte);
+			}
+			case 2: {
+				int numCarte = this.choisirCarteAJouer(j);
+				// appeler le bon pouvoir de la carte
+				Carte carte = j.getMain().getCarte(numCarte);
+				j.jouePouvoir(carte, this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)), this);
+				// proposer à l'autre joueur de recup la carte
+				System.out.println("Le joueur " + this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)).getNom()
+						+ " doit faire un choix  :");
+				Scanner scChoixRecupCarte = new Scanner(System.in);
+				System.out.println("Taper 1 pour Récuperer la carte qui vient d'être jouée, 2 pour la défausser");
+				int choixRecupCarte = scChoixRecupCarte.nextInt();
+				switch (choixRecupCarte) {
+					case 1:
+						this.listeJoueur.get(1 - this.listeJoueur.indexOf(j)).ajouterVieFuture(carte);
+						;
+						break;
+					case 2:
+						this.fosse.ajouterCarte(carte);
+						break;
+					default:
+						break;
+				}
+				PilesCartes cartesMain = j.getMain();
+				cartesMain.supprimerCarte(numCarte);
+				j.setMain(cartesMain);
 				break;
+
+			}
+
+			case 3: {
+				int numCarte = this.choisirCarteAJouer(j);
+				j.jouerFuture(numCarte);
+				break;
+
+			}
+			case 4: {
+				boolean passable = j.passer();
+				if (passable) {
+					System.out.println("Vous passez votre tour.");
+					break;
+				} else {
+					System.out.println("Vous ne pouvez pas passer votre tour car votre pile est vide");
+					// reproposer le choix
+				}
+
+			}
 			default:
+				System.out.println("choix incorect");
 				break;
-			}
-			PilesCartes cartesMain = j.getMain();
-			cartesMain.supprimerCarte(numCarte);
-			j.setMain(cartesMain);
-			break;
-
-		}
-
-		case 3: {
-			int numCarte = this.choisirCarteAJouer(j);
-			j.jouerFuture(numCarte);
-			break;
-
-		}
-		case 4: {
-			boolean passable = j.passer();
-			if (passable) {
-				System.out.println("Vous passez votre tour.");
-				break;
-			} else {
-				System.out.println("Vous ne pouvez pas passer votre tour car votre pile est vide");
-				// reproposer le choix
-			}
-
-		}
-		default:
-			System.out.println("choix incorect");
-			break;
 		}
 	}
 
@@ -349,18 +354,18 @@ public class Partie implements Serializable {
 			}
 
 			switch (choixStrategie) {
-			case 1:
-				joueurO = new JoueurVirtuel("L'ordinateur", new Aleatoire(), this);
-				break;
-			case 2:
-				joueurO = new JoueurVirtuel("L'ordinateur", new Defensif(), this);
-				break;
-			case 3:
-				joueurO = new JoueurVirtuel("L'ordinateur", new Agressif(), this);
-				break;
-			default:
-				joueurO = new JoueurVirtuel("L'ordinateur", new Aleatoire(), this);
-				break;
+				case 1:
+					joueurO = new JoueurVirtuel("L'ordinateur", new Aleatoire(), this);
+					break;
+				case 2:
+					joueurO = new JoueurVirtuel("L'ordinateur", new Defensif(), this);
+					break;
+				case 3:
+					joueurO = new JoueurVirtuel("L'ordinateur", new Agressif(), this);
+					break;
+				default:
+					joueurO = new JoueurVirtuel("L'ordinateur", new Aleatoire(), this);
+					break;
 			}
 			this.ajouterUnJoueur(joueurO);
 			// distribution des cartes
@@ -426,25 +431,25 @@ public class Partie implements Serializable {
 		}
 
 		switch (choix) {
-		case 1: {
-			System.out.println("Démarage d'une partie contre l'ordinateur");
-			karmaka.jeuOrdinateur();
-			break;
-		}
-		case 2: {
-			System.out.println("Démarage d'une partie à deux joueur");
-			karmaka.jeuDeuxJoueurs();
-			break;
+			case 1: {
+				System.out.println("Démarage d'une partie contre l'ordinateur");
+				karmaka.jeuOrdinateur();
+				break;
+			}
+			case 2: {
+				System.out.println("Démarage d'une partie à deux joueur");
+				karmaka.jeuDeuxJoueurs();
+				break;
 
-		}
-		case 3: {
-			System.out.println("Chargement de la partie sauvegardée...");
-			karmaka.chargerPartie();
-			break;
-		}
-		default:
-			System.out.println("choix incorect");
-			break;
+			}
+			case 3: {
+				System.out.println("Chargement de la partie sauvegardée...");
+				karmaka.chargerPartie();
+				break;
+			}
+			default:
+				System.out.println("choix incorect");
+				break;
 		}
 
 		/*

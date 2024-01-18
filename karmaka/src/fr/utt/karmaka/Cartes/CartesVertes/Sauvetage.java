@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Sauvetage
+ */
 public class Sauvetage extends CartesVertes {
 	public Sauvetage() {
 		super(2, 3, "Sauvetage");
@@ -22,8 +25,7 @@ public class Sauvetage extends CartesVertes {
 			int numCarte = choisirCarte(p.getFosse().getSize() - 1);
 			j.getMain().ajouterCarte(p.getFosse().getCarte(numCarte));
 			p.getFosse().supprimerCarte(numCarte);
-		}
-		else {
+		} else {
 			if (p.getFosse().getSize() > 0) {
 				j.getMain().ajouterCarte(p.getFosse().getCarte(p.getFosse().getSize() - 1));
 				p.getFosse().supprimerCarte(p.getFosse().getSize() - 1);

@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Lendemain
+ */
 public class Lendemain extends CartesVertes {
 	public Lendemain() {
 		super(1, 3, "Lendemain");
@@ -14,8 +17,7 @@ public class Lendemain extends CartesVertes {
 			System.out.println("Vous jouez la carte " + this.getNom());
 			j.piocher();
 			p.jouerUneCarte(j);
-		}
-		else {
+		} else {
 		}
 	}
 }

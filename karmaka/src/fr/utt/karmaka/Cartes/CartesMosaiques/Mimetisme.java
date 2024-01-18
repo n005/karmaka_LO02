@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Mimetisme
+ */
 public class Mimetisme extends CartesMosaiques {
 	public Mimetisme() {
 		super(1, 2, "Mimétisme");

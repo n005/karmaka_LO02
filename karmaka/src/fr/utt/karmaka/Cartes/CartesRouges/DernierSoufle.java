@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class DernierSoufle
+ */
 public class DernierSoufle extends CartesRouges {
 	public DernierSoufle() {
 		super(1, 3, "Dernier Soufle");

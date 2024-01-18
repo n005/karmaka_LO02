@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Semis
+ */
 public class Semis extends CartesVertes {
 	public Semis() {
 		super(2, 3, "Semis");
@@ -29,8 +32,7 @@ public class Semis extends CartesVertes {
 			numCarte = choisirCarte(j.getMain().getSize() - 1);
 			j.getVieFuture().ajouterCarte(j.getMain().getCarte(numCarte));
 			j.getMain().supprimerCarte(numCarte);
-		}
-		else {
+		} else {
 			j.piocher();
 			j.piocher();
 			if (j.getMain().getSize() > 0) {

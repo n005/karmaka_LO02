@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class CoupDoeil
+ */
 public class CoupDoeil extends CartesBleues {
 
 	public CoupDoeil() {

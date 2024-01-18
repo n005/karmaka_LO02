@@ -6,6 +6,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Destinee
+ */
 public class Destinee extends CartesBleues {
 	/**
 	 * Constructeur de la carte.
@@ -14,10 +17,9 @@ public class Destinee extends CartesBleues {
 		super(2, 3, "Destinée");
 	}
 
-	// Regardez les 3 premières cartes de la Source ; ajoutez-en jusqu’à 2 à votre
-	// Vie Future. Replacez le reste dans l'ordre souhaité.
 	/**
 	 * Permet de jouer le pouvoir de la carte.
+	 * 
 	 * @param j
 	 * @param rival
 	 * @param p

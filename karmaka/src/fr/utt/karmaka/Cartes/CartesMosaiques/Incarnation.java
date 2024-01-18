@@ -6,6 +6,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Incarnation
+ */
 public class Incarnation extends CartesMosaiques {
 	public Incarnation() {
 		super(1, 5, "Incarnation");

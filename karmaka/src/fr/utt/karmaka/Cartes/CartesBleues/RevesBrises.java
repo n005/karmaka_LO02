@@ -6,6 +6,9 @@ import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 import fr.utt.karmaka.PilesCartes;
 
+/**
+ * Class RevesBrises
+ */
 public class RevesBrises extends CartesBleues {
 	public RevesBrises() {
 		super(2, 3, "Rêves Brisés");

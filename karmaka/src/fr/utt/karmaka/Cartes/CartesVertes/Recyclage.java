@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Recyclage
+ */
 public class Recyclage extends CartesVertes {
 	public Recyclage() {
 		super(1, 3, "Recyclage");
@@ -22,8 +25,7 @@ public class Recyclage extends CartesVertes {
 			int numCarte = choisirCarte(p.getFosse().getSize() - 1);
 			j.getVieFuture().ajouterCarte(p.getFosse().getCarte(numCarte));
 			p.getFosse().supprimerCarte(numCarte);
-		}
-		else {
+		} else {
 			if (p.getFosse().getSize() > 0) {
 				j.getVieFuture().ajouterCarte(p.getFosse().getCarte(p.getFosse().getSize() - 1));
 				p.getFosse().supprimerCarte(p.getFosse().getSize() - 1);

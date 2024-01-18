@@ -6,6 +6,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Vol
+ */
 public class Vol extends CartesBleues {
 	public Vol() {
 		super(3, 2, "Vol");

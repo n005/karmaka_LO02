@@ -4,6 +4,9 @@ import fr.utt.karmaka.Joueur;
 import fr.utt.karmaka.JoueurVirtuel;
 import fr.utt.karmaka.Partie;
 
+/**
+ * Class Longevite
+ */
 public class Longevite extends CartesVertes {
 	public Longevite() {
 		super(2, 3, "Longévité");
@@ -20,8 +23,7 @@ public class Longevite extends CartesVertes {
 			for (int i = 0; i < j.getMain().getSize(); i++) {
 				System.out.println(i + " : " + j.getMain().getCarte(i).getNom());
 			}
-		}
-		else {
+		} else {
 			j.piocher();
 			j.piocher();
 		}
