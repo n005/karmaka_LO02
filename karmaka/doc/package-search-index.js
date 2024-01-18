@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"fr.utt.karmaka"},{"l":"fr.utt.karmaka.Cartes.CartesBleues"},{"l":"fr.utt.karmaka.Cartes.CartesMosaiques"},{"l":"fr.utt.karmaka.Cartes.CartesRouges"},{"l":"fr.utt.karmaka.Cartes.CartesVertes"}]
