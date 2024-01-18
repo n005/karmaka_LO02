@@ -1,11 +1,30 @@
 # karmaka_LO02
 
+## Sommaire
+
+- [karmaka\_LO02](#karmaka_lo02)
+  - [Sommaire](#sommaire)
+  - [Organisation des fichiers](#organisation-des-fichiers)
+    - [Dossier modelio](#dossier-modelio)
+    - [Dossier karmaka](#dossier-karmaka)
+      - [Dossier src](#dossier-src)
+      - [Dossier doc](#dossier-doc)
+      - [Dossier bin](#dossier-bin)
+  - [État actuel de l’application](#état-actuel-de-lapplication)
+    - [Fonctionnalités implémentées](#fonctionnalités-implémentées)
+    - [Fonctionnalités non implémentées](#fonctionnalités-non-implémentées)
+  - [Utilisation de l’application](#utilisation-de-lapplication)
+  - [Structure du code](#structure-du-code)
+    - [Diagramme de classes](#diagramme-de-classes)
+      - [Différences entre le diagramme de classes prévu et le diagramme de classes final :](#différences-entre-le-diagramme-de-classes-prévu-et-le-diagramme-de-classes-final-)
+
 ## Organisation des fichiers
 
 ### Dossier modelio
 
 Ce dossier contient les fichiers du projet modelio.
 
+>Utilisé pour la conception du projet, il n'est pas nécessaire pour l'exécution du projet. Il est possible de l'ouvrir avec le logiciel Modelio.
 ### Dossier karmaka
 
 Ce dossier contient les fichiers du projet java karmaka.
@@ -18,6 +37,7 @@ Ce dossier contient les fichiers sources du projet java karmaka.
 
 Ce dossier contient la documentation du projet java karmaka.
 
+>Il semble que la documentation des modules n'arrive pas à se générer, voir `package-info.java` pour plus d'informations. (ainsi que `overview.html` n'est pas généré)
 #### Dossier bin
 
 Ce dossier contient les fichiers binaires du projet java karmaka.
@@ -27,6 +47,18 @@ Ce dossier contient les fichiers binaires du projet java karmaka.
 ### Fonctionnalités implémentées
 
 Les fonctionnalités implémentées sont ceux du cahier des charges, nous avons fait le choix de ne pas implémenter les fonctionnalités bonus, soit l'interface graphique.
+Soit:
+* Un système de sauvegarde et de chargement de partie
+* Un mode multijoueur (en 1vs1 ou 1 vs bot)
+* Des bots avec des stratégies différentes
+  * C'est des pondération de stratégies, les bots ne sont pas intelligents
+* Le jeu de base Karmaka des cartes
+  * Les pouvoirs des cartes
+  * La gestion des cartes et des decks (piles)
+  * La réincarnation
+  * Détetion de la fin de partie
+  * Les anneaux karmiques
+* ...
 
 ### Fonctionnalités non implémentées
 
@@ -42,3 +74,21 @@ Les fonctionnalités implémentées sont ceux du cahier des charges, nous avons 
   * Possibilité de sauvegarder plus d'une partie à la fois
 * Certains pouvoirs peuvent être bugués.
 * Les pouvoirs pour les bots peuvent être améliorés dans leur implémentation (éviter les `instanceof`)
+* ...
+
+## Utilisation de l’application
+
+Pour lancer l'application, il faut lancer le fichier `Partie.java` dans le package `karmaka.src` et suivre les instructions.
+
+## Structure du code
+
+### Diagramme de classes
+
+Le diagramme de classes final:
+![Diagramme de classes](./Diagramme_de_classe_final.png)
+
+Ainsi que le diagramme de classes de Modelio dans le dossier `modelio` (diagramme de classes prévu):
+
+![Diagramme de classes Modelio](./OldDiagramme_de_classe_final.png)
+
+#### Différences entre le diagramme de classes prévu et le diagramme de classes final :
