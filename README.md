@@ -16,7 +16,7 @@
   - [Utilisation de l’application](#utilisation-de-lapplication)
   - [Structure du code](#structure-du-code)
     - [Diagramme de classes](#diagramme-de-classes)
-      - [Différences entre le diagramme de classes prévu et le diagramme de classes final :](#différences-entre-le-diagramme-de-classes-prévu-et-le-diagramme-de-classes-final-)
+      - [Différences entre le diagramme de classes prévu et le diagramme de classes final](#différences-entre-le-diagramme-de-classes-prévu-et-le-diagramme-de-classes-final)
 
 ## Organisation des fichiers
 
@@ -89,6 +89,10 @@ Le diagramme de classes final:
 
 Ainsi que le diagramme de classes de Modelio dans le dossier `modelio` (diagramme de classes prévu):
 
-![Diagramme de classes Modelio](./OldDiagramme_de_classe_final.png)
+![Diagramme de classes Modelio](./Diagramme_de_classe_prevu.png)
 
-#### Différences entre le diagramme de classes prévu et le diagramme de classes final :
+#### Différences entre le diagramme de classes prévu et le diagramme de classes final
+
+* La classe `Partie` n'avait pas été détailée dans le diagramme de classes prévu, elle a été ajoutée dans le diagramme de classes final, ainsi que les relations avec les autres classes:
+  * Les classes `Source`, `Fosse`, `JoueurVirtuel` et `Joueur`.
+* On n'utilise pas d'interface `Pouvoir`, mais une classe par Couleur de carte.
