@@ -46,7 +46,7 @@ Ce dossier contient les fichiers binaires du projet java karmaka.
 
 ### Fonctionnalités implémentées
 
-Les fonctionnalités implémentées sont ceux du cahier des charges, nous avons fait le choix de ne pas implémenter les fonctionnalités bonus, soit l'interface graphique.
+Les fonctionnalités implémentées sont celles du cahier des charges, nous avons fait le choix de ne pas implémenter les fonctionnalités bonus, soit l'interface graphique.
 Soit:
 * Un système de sauvegarde et de chargement de partie
 * Un mode multijoueur (en 1vs1 ou 1 vs bot)
@@ -56,7 +56,7 @@ Soit:
   * Les pouvoirs des cartes
   * La gestion des cartes et des decks (piles)
   * La réincarnation
-  * Détetion de la fin de partie
+  * Détection de la fin de partie
   * Les anneaux karmiques
 * ...
 
@@ -65,8 +65,8 @@ Soit:
 * L'interface graphique
 * Le mode multijoueur
 * Une véritable intelligence artificielle (pour l'instant l'IA joue aléatoirement avec des pondérations différentes pour les stratégies)
-* Une gestion des erreurs plus poussée (création d'excpetions spécifiques, etc.)
-* Une gestion de la partie plus poussée:
+* Une gestion des erreurs plus poussée (création d'exceptions spécifiques, etc.)
+* Une gestion de la partie plus poussée :
   * Possibilité de sauvegarder une partie plus simplement
   * Affichage amélioré de la partie:
     * Une CLI plus jolie
@@ -74,6 +74,7 @@ Soit:
   * Possibilité de sauvegarder plus d'une partie à la fois
 * Certains pouvoirs peuvent être bugués.
 * Les pouvoirs pour les bots peuvent être améliorés dans leur implémentation (éviter les `instanceof`)
+* Un mode de jeu multijoueur avec plus de 2 joueurs.
 * ...
 
 ## Utilisation de l’application
