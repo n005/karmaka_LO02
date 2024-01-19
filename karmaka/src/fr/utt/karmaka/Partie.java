@@ -451,21 +451,6 @@ public class Partie implements Serializable {
 				System.out.println("choix incorect");
 				break;
 		}
-
-		/*
-		 * //création des joueurs Joueur joueur1 = new Joueur("J1"); Joueur joueur2 =
-		 * new Joueur("J2");
-		 * 
-		 * // on ajoute les 2 joueurs à la partie karmaka.ajouterUnJoueur(joueur1);
-		 * karmaka.ajouterUnJoueur(joueur2);
-		 * 
-		 * System.out.println(joueur1);
-		 * 
-		 * System.out.println(karmaka.source);
-		 * 
-		 * karmaka.DonnerCarteMiseEnPlace(joueur1, joueur2);
-		 * System.out.println(joueur1);
-		 */
 	}
 
 	public Source getSource() {
